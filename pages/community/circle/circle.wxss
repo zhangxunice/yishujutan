@@ -1,0 +1,78 @@
+/* pages/community/circle/circle.wxss */
+.top{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+}
+.search{
+  background-color: whitesmoke;
+  border-radius: 9rpx;
+  height: 70rpx;
+  width: 65%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+}
+.search input{
+  padding-left: 10rpx;
+}
+.apply{
+  margin-left: 45rpx;
+  background-color: #95dfde;
+  color: white;
+  width: 20%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}
+.myCircle{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  height: 50rpx;
+  align-items: center;
+}
+.left{
+  flex: 0.65;
+}
+.middle{
+  padding: 10rpx;
+  flex: 8;
+  line-height: 50rpx;
+  font-size: 32rpx;
+}
+.right{
+  flex: 0.65;
+}
+.itemGroup{
+  margin-top: 15rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid whitesmoke;
+}
+.icon{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.content{
+  padding-left: 20rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 35rpx;
+}

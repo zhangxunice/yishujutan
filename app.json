@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/user/myCollect",
+    "pages/user/myIssue",
+    "pages/community/community",
+    "pages/community/friendsinfo",
+    "pages/community/circle/circle",
+    "pages/community/circle/apply",
+    "pages/community/circle/detail",
+    "pages/community/post/post",
+    "pages/community/posting/posting",
+    "pages/bookdetails/bookdetail"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#87CEFF",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#7CFC00"
+  },
+  "tabBar": {
+    "selectedColor": "#e64340",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/homefill.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社区",
+        "iconPath": "images/tab/community.png",
+        "selectedIconPath": "images/tab/communityfill.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tab/my.png",
+        "selectedIconPath": "images/tab/myfill.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,63 @@
+<!--pages/community/post/post.wxml-->
+<view class='top'>
+  <view class='search'>
+    <image src='/images/icon/search.png'></image>
+    <input placeholder='推送帖子标题'></input>
+  </view>
+  <view class='post' bindtap='toPosting'>去发帖</view>
+  <view class='nav'>
+    <view class='navName' data-index='1' bindtap='switch_nav'>关  注
+      <view class='blackBar' style='opacity:{{show==1?1:0}};'></view>
+    </view>
+    <view class='navName' data-index='2' bindtap='switch_nav'>推  荐
+      <view class='blackBar' style='opacity:{{show==2?1:0}};'></view>
+    </view>
+    <view class='navName' data-index='3' bindtap='switch_nav'>热  榜
+      <view class='blackBar' style='opacity:{{show==3?1:0}};'></view>
+    </view>
+  </view>
+</view>
+
+<scroll-view scroll-y='true' scroll-with-animation='true' style='height:100vh;'>
+  <!--填补top的空白 -->
+  <view style='height:145rpx;'></view>
+  <!--帖子的布局 -->
+  <view class='item' wx:for='qwerty'>
+    <!--标题 -->
+    <view class='title'>这里是标题</view>
+    <!--中间内容 -->
+    <view class='middle'>
+      <!--左部 -->
+      <view class='left'>
+        <view class='user'>
+          <image src='/images/my/xiaoyan.png' class='icon'></image>
+          <view class='username'>不停息的风</view>
+        </view>
+        <view class='content'>这里是内容</view>
+      </view>
+      <!--右部 -->
+      <image class='right' src='/images/community/circle/ts.jpg'></image>
+    </view>
+    <!--底部 -->
+    <view class='bottom'>
+      <view>
+        <image src='/images/community/forward.png' class='btnImg'></image>
+        <text>497</text>
+      </view>
+      <view>
+        <image src='/images/community/comment.png' class='btnImg'></image>
+        <text>997</text>
+      </view>
+      <view></view>
+      <view>
+        <image src='/images/community/great.png' class='btnImg'></image>
+        <text>7515</text>
+      </view>
+      <view>
+        <image src='/images/community/low.png' class='btnImg'></image>
+        <text>2</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+

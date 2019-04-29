@@ -1,0 +1,36 @@
+<!--pages/community/circle/circle.wxml-->
+<view class='top'>
+  <view class='search'>
+    <image src='/images/icon/search.png'></image>
+    <input placeholder='输入关键字搜索'></input>
+  </view>
+  <view class='apply' bindtap='toApply'>申请</view>
+</view>
+
+<view class='myCircle' bindtap='showMyJoin'>
+  <image src='/images/community/myjoin.png' class='left' mode='widthFix'></image>
+  <view class='middle'>我加入的圈子</view>
+  <image src='{{src1}}' class='right' mode='widthFix'></image>
+</view>
+
+<view class='itemGroup' wx:if='{{show1}}'>
+  <view class='item' wx:for='{{myJoin}}' wx:key='index' bindtap='toDetail'
+  id='{{item.id}}'>
+    <image class='icon' src='{{item.circleIcon}}'></image>
+    <view class='content'>{{item.circleName}}</view>
+  </view>
+</view>
+
+<view class='myCircle' bindtap='showMyBrowse'>
+  <image src='/images/community/mybrowse.png' class='left' mode='widthFix'></image>
+  <view class='middle'>浏览过的圈子</view>
+  <image src='{{src2}}' class='right' mode='widthFix'></image>
+</view>
+
+<view class='itemGroup' wx:if='{{show2}}'>
+  <view class='item' wx:for='{{myBrowse}}' wx:key='index' bindtap='toDetail'
+  id='{{item.id}}'>
+    <image class='icon' src='{{item.circleIcon}}'></image>
+    <view class='content'>{{item.circleName}}</view>
+  </view>
+</view>

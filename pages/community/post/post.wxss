@@ -1,0 +1,132 @@
+/* pages/community/post/post.wxss */
+page{
+  background-color: whitesmoke;
+}
+.top{
+  position: fixed;
+  background-color: white;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  font-size: 30rpx;
+}
+.search{
+  background-color: whitesmoke;
+  border-radius: 9rpx;
+  height: 70rpx;
+  width: 65%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.post{
+  position: fixed;
+  top: 0;
+  right: 45rpx;
+  background-color: #09bb07;
+  color: white;
+  width: 20%;
+  height: 70rpx;
+  text-align: center;
+  border-radius: 6rpx;
+  line-height: 70rpx;
+}
+.search image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 5rpx;
+}
+.search input{
+  padding-left: 10rpx;
+}
+.nav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid whitesmoke;
+}
+.navName{
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.blackBar{
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  height: 5rpx;
+  margin: auto;
+  background-color: #353535;
+  transition: .5s ease;
+}
+.item{
+  padding: 20rpx;
+  margin-top: 10rpx;
+  background-color: white;
+}
+.title{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.middle{
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.left{
+  flex: 1;
+}
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right{
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+}
+.username{
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  margin-bottom: 5rpx;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  color: #888888;
+}
+.content{
+  font-size: 30rpx;
+  color: #888888;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.bottom view{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnImg{
+  width: 50rpx;
+  height: 50rpx;
+}
+text{
+  padding: 5rpx;
+  font-size: 28rpx;
+}

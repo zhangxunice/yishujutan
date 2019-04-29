@@ -1,0 +1,121 @@
+/**index.wxss**/
+page{
+  background-color: #f2f2f2
+}
+
+.swiper-container {
+  height: 300rpx;
+}
+
+.swiper {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.slide-image {
+  height: 280rpx;
+  width: 95%;
+  border-radius: 20rpx;
+  position: relative;
+  left: 2.5%;
+}
+
+.tui-tabbar-content {
+  padding: 8px;
+  background-color: #f2f2f2;
+}
+
+.tui-tabbar-group {
+  border: 1px solid #4cd964;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  color: #4cd964;
+}
+
+.tui-tabbar-cell {
+  display: table-cell;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+
+.tui-tabbar-cell:not(:last-child) {
+  border-right: 1px solid #4cd964;
+}
+
+.tui-tabbar-cell.tui-active {
+  background-color: #4cd964;
+  color: #fff;
+}
+
+.tui-list-box {
+  border-top: 1px solid #c8c7cc;
+}
+
+.items {
+  background-color: #f2f2f2;
+  height: 1000px;
+  align-items: center;
+}
+
+.item {
+  width: 32%;
+  height: 200px;
+  margin-top: 10px;
+  text-align: center;
+  float: left;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.text {
+  font-size: 28rpx;
+}
+
+.hr {
+  height:5rpx;
+}
+
+.type1 {
+  width: 96%;
+  background-color: #FFF8DC;
+  margin: auto;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.type2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10rpx;
+}
+
+.typetext {
+  margin-top: 7rpx;
+  font-size: 30rpx;
+}
+.typeimg {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.typeimg image {
+  width: 60px;
+  height: 60px;
+}

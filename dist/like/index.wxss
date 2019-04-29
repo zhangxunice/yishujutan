@@ -1,0 +1,16 @@
+/* components/like/index.wxss */
+.container{
+  display: inline-flex;
+  padding: 10rpx;
+}
+.container image{
+  height: 32rpx;
+  width: 28rpx;
+}
+.container text{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  position: relative;
+  bottom: 8rpx;
+  left: 6rpx;
+}

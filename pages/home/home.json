@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-like": "/dist/like/index",
+    "van-row": "/dist/row/index",
+    "van-card": "/dist/card/index",
+    "van-tag": "/dist/tag/index",
+    "van-search": "/dist/search/index"
+  }
+  
+}

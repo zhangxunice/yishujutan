@@ -1,0 +1,51 @@
+/* pages/community/circle/apply.wxss */
+page{
+  font-size: 32rpx;
+  color: #353535;
+}
+.tips{
+  padding: 20rpx;
+}
+.info{
+  position: relative;
+  border-top: 1rpx solid whitesmoke;
+  border-bottom: 1rpx solid whitesmoke;
+}
+
+.first{
+  padding-left: 1em;
+  width: 60%;
+  height: 100rpx;
+  border-bottom: 1rpx solid whitesmoke;
+  display: flex;
+  align-items: center;
+}
+.addImage{
+  width: 200rpx;
+  height: 280rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  border: 1rpx dotted #95dfde;
+  line-height: 280rpx;
+  text-align: center;
+  color: #888888;
+}
+.second{
+  padding: 1em;
+  height: 500rpx;
+}
+
+.submit{
+  background-color: #95dfde;
+  color: white;
+  position: fixed;
+  bottom: 20rpx;
+  left: 10%;
+  width: 80%;
+  height: 80rpx;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  text-align: center;
+  
+}

@@ -1,0 +1,25 @@
+<!--pages/user/user.wxml-->
+<view class='out'>
+  <view class='imgView'>
+    <image src='/images/my/xiaoyan.png'></image>
+    <view>username</view>
+  </view>
+</view>
+
+<view class='btnGroup'>
+
+  <view class='btn'>
+    <image class='icon' src='/images/my/info.png' mode='widthFix'></image>
+    <view class='text'>个人信息</view>
+  </view>
+
+  <view class='btn' wx:for='{{options}}' wx:key='id' bindtap='jumpToMy' data-index='{{item.id}}'>
+    <image class='icon' src='{{item.icon}}' mode='widthFix'></image>
+    <view class='text'>{{item.text}}</view>
+  </view>
+
+  <view class='btn' style='border-bottom:none;'>
+    <image class='icon' src='/images/my/setting.png' mode='widthFix'></image>
+    <view class='text'>设置</view>
+  </view>
+</view>

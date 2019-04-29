@@ -1,0 +1,98 @@
+/* pages/community/community.wxss */
+page{
+  background-color: whitesmoke;
+}
+.nav{
+  margin: 10rpx;
+  color: rgba(63, 60, 60, 0.986);
+  font-size: 35rpx;
+}
+.group1{
+  width: 96%;
+  background-color: white;
+  margin: auto;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+.category{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx;
+}
+.text{
+  margin-top: 7rpx;
+  font-size: 30rpx;
+  color: rgba(63, 60, 60, 0.986);
+}
+.circle{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #09bb07;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.group2{
+  margin-top: 15rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  background-color: white;
+}
+.message{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid whitesmoke;
+}
+.icon{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.icon image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}
+.tips{
+  position: absolute;
+  top: -17rpx;
+  right: -17rpx;
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  border-radius: 50%;
+  background-color: #e64340;
+  color: white;
+  text-align: center;
+  font-size: 25rpx;
+}
+.content{
+  padding: 10rpx;
+  flex: 1;
+}
+.content2{
+  margin-top: 5rpx;
+  color: #888888;
+  font-size: 27rpx;
+}
+.time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27rpx;
+  width: 100rpx;
+  color: #888888;
+}

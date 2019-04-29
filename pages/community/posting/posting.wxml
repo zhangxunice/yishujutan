@@ -1,0 +1,23 @@
+<!--pages/community/posting/posting.wxml-->
+<view class='top'>
+  <view class='cancle'>取消</view>
+  <view class='issue'>发布</view>
+</view>
+
+<form>
+  <view class='text'>
+  <view class='title'>
+    <input placeholder='请在此输入标题' placeholder-style='color:#696969'></input>
+  </view>
+  <view class='content'>
+    <textarea placeholder='请在次输入内容' contenteditable='true' auto-height='true'></textarea>
+  </view>
+</view>
+</form>
+
+<view class='bottom'>
+  <view><image src='/images/community/font.png' mode='widthFix'></image></view>
+  <view><image src='/images/community/picture.png' mode='widthFix'></image></view>
+  <view><image src='/images/community/add.png' mode='widthFix'></image></view>
+  <view><image src='/images/my/setting.png' mode='widthFix'></image></view>
+</view>

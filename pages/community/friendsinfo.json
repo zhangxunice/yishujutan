@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "small-icon": "/dist/icon/index"
+  }
+}

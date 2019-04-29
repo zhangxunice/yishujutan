@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view>
+  <!-- <搜索框> -->
+  <van-search shape='round' placeholder="找不到？搜一搜！" bind:focus='onseach' />
+  <!-- <轮播图> -->
+  <view class='swiper-container'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" circular="{{circular}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item class='swiper'>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='hr'></view>
+  <!-- <链接> -->
+  <view class='type1'>
+    <view class='type2' wx:for='{{type}}' wx:key='id'>
+      <view class='typeimg'>
+        <image src='{{item.icon}}'></image>
+      </view>
+      <view class='typetext'>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class='hr'></view>
+  <view class="tui-tabbar-content">
+    <view class="tui-tabbar-group">
+      <text data-id="0" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 0 ? 'tui-active' : ''}}">新品上架</text>
+      <text data-id="1" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 1 ? 'tui-active' : ''}}">大家最爱</text>
+    </view>
+  </view>
+  <swiper current="{{index}}" style="height:600px;" duration="300" bindchange="bindchange">
+    <!-- <新品上架> -->
+    <swiper-item>
+      <view class="items">
+        <block wx:for="{{books}}">
+          <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
+            <view>
+              <image src="{{item.images.medium}}" style="width:100px;height:150px;"></image>
+            </view>
+            <view class="name">
+              <text>{{item.title}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+    <!-- <大家最爱> -->
+    <swiper-item>
+      <view wx:for='{{books}}' wx:key=''>
+        <van-card price="{{item.collect_count}}" desc="{{item.year}}" title="{{item.title}}" thumb="{{item.images.small}}">
+          <view slot="tags">
+            <van-tag round type="primary"> {{item.genres}}</van-tag>
+          </view>
+        </van-card>
+
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
