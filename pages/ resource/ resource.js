@@ -1,23 +1,11 @@
-// pages/user/myIssue.js
+// pages/ resource/ resource.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    index:0
 
-  },
-  changeTabbar(e) {
-    this.setData({
-      index: e.currentTarget.dataset.id
-    })
-  }, 
-  bindchange: function (e) {
-    const that = this;
-    that.setData({
-      currentData: e.detail.current
-    })
   },
 
   /**

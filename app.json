@@ -12,8 +12,10 @@
     "pages/community/circle/detail",
     "pages/community/post/post",
     "pages/community/posting/posting",
-    "pages/bookdetails/bookdetail"
-    
+    "pages/bookdetails/bookdetail",
+    "pages/book/books",
+    "pages/notebook/notebooks",
+    "pages/resource/resource"
   ],
   "window": {
     "navigationBarBackgroundColor": "#87CEFF",

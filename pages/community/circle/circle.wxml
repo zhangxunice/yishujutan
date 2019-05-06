@@ -14,8 +14,7 @@
 </view>
 
 <view class='itemGroup' wx:if='{{show1}}'>
-  <view class='item' wx:for='{{myJoin}}' wx:key='index' bindtap='toDetail'
-  id='{{item.id}}'>
+  <view class='item' wx:for='{{myJoin}}' wx:key='index' bindtap='toDetail' id='{{item.id}}'>
     <image class='icon' src='{{item.circleIcon}}'></image>
     <view class='content'>{{item.circleName}}</view>
   </view>
@@ -28,8 +27,7 @@
 </view>
 
 <view class='itemGroup' wx:if='{{show2}}'>
-  <view class='item' wx:for='{{myBrowse}}' wx:key='index' bindtap='toDetail'
-  id='{{item.id}}'>
+  <view class='item' wx:for='{{myBrowse}}' wx:key='index' bindtap='toDetail' id='{{item.id}}'>
     <image class='icon' src='{{item.circleIcon}}'></image>
     <view class='content'>{{item.circleName}}</view>
   </view>

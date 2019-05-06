@@ -1,2 +1,46 @@
 <!--pages/user/myIssue.wxml-->
-<text>pages/user/myIssue.wxml</text>
+<view class="tui-tabbar-content">
+  <view class="tui-tabbar-group">
+    <text data-id="0" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 0 ? 'tui-active' : ''}}">宝贝</text>
+    <text data-id="1" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 1 ? 'tui-active' : ''}}">资源</text>
+    <text data-id="2" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 2 ? 'tui-active' : ''}}">帖子</text>
+  </view>
+</view>
+<swiper current="{{index}}" style="height:600px;" duration="300" bindchange="bindchange">
+  <!-- <宝贝> -->
+  <swiper-item>
+    <van-card num="2" price="10.00" desc="快速上手的不二之选，人人都会小程序" title="小程序，巧应用" thumb="/images/icon/2.JPEG">
+      <view slot="footer">
+        <view>
+          <view style='margin-left:370rpx'>
+            <text style='color:#000000'>审核状态：</text>
+            <text style='color:#EE0000'>审核中</text> </view>
+          <van-button round type="danger" size="small">取消发布</van-button>
+        </view>
+      </view>
+    </van-card>
+  </swiper-item>
+  <!-- <资源> -->
+  <swiper-item>
+    <view class='resource'>
+      <view class='resource-title'>
+        <text class='title'>标题:</text>
+      </view>
+      <view class='resource-title'>
+        <text class='time'>发布日期:</text>
+      </view>
+    </view>
+
+  </swiper-item>
+  <!-- <帖子> -->
+  <swiper-item>
+    <view class='resource'>
+      <view class='resource-title'>
+        <text class='title'>标题:</text>
+      </view>
+      <view class='resource-title'>
+        <text class='time'>发布日期:</text>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>

@@ -2,18 +2,39 @@
 <view class='container'>
   <view class='bookdetail1'>
     <view>
-      <image src='/images/icon/1.jpg' class='img'></image>
+      <image src='{{books.images.small}}' bindtap='previewImg' class='img' data-src='{{books.images.small}}' data-list='{{books.images}}'></image>
     </view>
     <view class='bookdetail2'>
       <view class='bookdetail3'>
-        <text class='title'>复仇者联盟4：终局之战</text>
+        <text class='title'>{{books.title}}</text>
       </view>
-      <view class='bookdetail3'>
-        <text class='title'>复仇者联盟4：终局之战</text>
+      <view class='bookdetail3' style='margin-top: 50rpx'>
+        <text style='font-size=25rpx;font-weight:100'>作者：{{books.pubdates[0]}}</text>
       </view>
-      <view class='bookdetail3'>
-        <text class='title'>复仇者联盟4：终局之战</text>
+      <view class='bookdetail3' style='margin-top: 25rpx'>
+        <text style='font-size=25rpx;font-weight:100'>出版社：{{directors.name}}</text>
       </view>
     </view>
   </view>
+
+
+  <view class='container2'>
+    <view class='hr'>
+      <image src='http://img.mp.sohu.com/upload/20170714/d92129a6476e431f93010b52ef047269.png' style='height:75rpx;width:80rpx'></image>
+      <view style='margin-left:30rpx'>正在出售的卖家ing</view>
+    </view>
+    <view style='margin-top:10rpx'>
+      <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+        <van-collapse-item icon='manager'>
+          <view slot="title" class='seller'>
+            {{books.title}}
+          </view>
+          <view>
+            {{books.summary}}
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
+  </view>
+
 </view>

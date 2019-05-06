@@ -15,7 +15,7 @@
   <view class='hr'></view>
   <!-- <链接> -->
   <view class='type1'>
-    <view class='type2' wx:for='{{type}}' wx:key='id'>
+    <view class='type2' wx:for='{{type}}' wx:key='id' data-index='{{item.id}}' bindtap='todetail'>
       <view class='typeimg'>
         <image src='{{item.icon}}'></image>
       </view>
@@ -49,7 +49,7 @@
     <!-- <大家最爱> -->
     <swiper-item>
       <view wx:for='{{books}}' wx:key=''>
-        <van-card price="{{item.collect_count}}" desc="{{item.year}}" title="{{item.title}}" thumb="{{item.images.small}}">
+        <van-card price="{{item.collect_count}}" desc="{{item.year}}" title="{{item.title}}" thumb="{{item.images.small}}" data-index='{{item.id}}'bindtap='ondetails'>
           <view slot="tags">
             <van-tag round type="primary"> {{item.genres}}</van-tag>
           </view>

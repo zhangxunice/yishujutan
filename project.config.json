@@ -44,8 +44,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "bookdetail",
-					"pathName": "pages/bookdetails/bookdetail",
+					"name": "mylsssue",
+					"pathName": "pages/user/myIssue",
 					"query": "",
 					"scene": null
 				}
