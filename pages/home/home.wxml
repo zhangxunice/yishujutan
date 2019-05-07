@@ -5,7 +5,7 @@
   <!-- <轮播图> -->
   <view class='swiper-container'>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" circular="{{circular}}">
-      <block wx:for="{{imgUrls}}">
+      <block wx:for="{{imgUrls}}" wx:key=''>
         <swiper-item class='swiper'>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
@@ -34,7 +34,7 @@
     <!-- <新品上架> -->
     <swiper-item>
       <view class="items">
-        <block wx:for="{{books}}">
+        <block wx:for="{{books}}" wx:key=''>
           <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
             <view>
               <image src="{{item.images.medium}}" style="width:100px;height:150px;"></image>

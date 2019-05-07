@@ -44,3 +44,10 @@
     </view>
   </swiper-item>
 </swiper>
+
+<view>
+  <image src="/images/icon/book.png" class="img-style" animation="{{animCollect}}" bindtap="collect"></image>
+  <image src="/images/my/post.png" class="img-style" animation="{{animTranspond}}" bindtap="transpond"></image>
+  <image src="/images/icon/means.png" class="img-style" animation="{{animInput}}" bindtap="input"></image>
+  <image src="/images/my/add.png" class="img-plus-style" animation="{{animPlus}}" bindtap="plus"></image>
+</view>

@@ -40,5 +40,22 @@
   color: #777373;
   font-size: 30rpx
 }
+.img-plus-style {
+height: 100rpx;
+width: 100rpx;
+position: absolute;
+bottom: 150rpx;
+right: 100rpx;
+z-index: 100;
+}
+.img-style {
+height: 80rpx;
+width: 80rpx;
+position: absolute;
+bottom: 150rpx;
+right: 100rpx;
+opacity: 0;
+}
+
 
 
