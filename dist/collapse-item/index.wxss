@@ -4,7 +4,7 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   transition: 0.3s;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .van-collapse-item__title--expanded .van-cell__right-icon {

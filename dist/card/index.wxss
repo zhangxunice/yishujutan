@@ -51,8 +51,10 @@
 }
 
 .van-card__title {
-  font-weight: 700;
+  font-weight: 500;
   line-height: 16px;
+  color: #000000;
+  font-size: 35rpx
 }
 
 .van-card__desc {
