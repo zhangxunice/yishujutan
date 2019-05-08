@@ -1,1 +1,32 @@
 /* pages/user/myCollect.wxss */
+page{
+  background-color:#F7F7F7 
+}
+.myCollect{
+  margin-top: 10rpx;
+  background-color: #FFFFFF;
+  border-radius:15rpx 
+}
+.myCollect1{
+  display: flex;
+  margin-left: 15rpx;
+  margin-top: 15rpx
+}
+.myCollectimg{
+  height: 200rpx;
+  width: 160rpx;
+  border-radius:10rpx;
+}
+.title{
+  margin-left:20rpx 
+}
+.author{
+  font-size: 30rpx;
+  color: #A3A3A3;
+  margin-left: 10rpx
+}
+.time{
+  font-size: 30rpx;
+  color: #A3A3A3;
+  margin-left: 20rpx
+}

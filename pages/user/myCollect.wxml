@@ -1,2 +1,11 @@
 <!--pages/user/myCollect.wxml-->
-<text>pages/user/myCollect.wxml</text>
+<view class='myCollect'>
+  <view class='myCollect1'>
+    <image src='/images/icon/1.jpg' class='myCollectimg'></image>
+    <text class='title'>微信小程序开发实践视频</text>
+  </view>
+  <view class='myCollect1'>
+    <text class='author'>leftz</text>
+    <text class='time'>2019-5-8</text>
+  </view>
+</view>
