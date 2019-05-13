@@ -1,2 +1,28 @@
 <!--pages/resource/resource.wxml-->
-<view>123</view>
+<view class="main">
+
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch" shape='round'>
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+  <view class='hr'></view>
+  <view wx:for='{{books}}' class="main-item">
+    <navigator url="/pages/resourcedetail/resourcedetail?id={{item.id}}">
+      <view class="main-item-t">
+        <view class="main-item-t-t">
+          <view class="main-item-t-t-1">
+            <image class="headImg" src="{{item.images.small}}"></image>
+          </view>
+          <view class="main-item-t-t-2">
+            <view class="userName">{{item.directors[0].name}}</view>
+            <view class="created">{{item.mainland_pubdate}}</view>
+          </view>
+
+        </view>
+        <view class="main-item-t-m">
+          <view class="title">{{item.title}}</view>
+          <view class="decription">这个api没有描述，不好意思</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

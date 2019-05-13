@@ -1,2 +1,21 @@
 <!--pages/resourcedetail/resourcedetail.wxml-->
-<text>pages/resourcedetail/resourcedetail.wxml</text>
+<view class="main-item">
+  <view wx:for='{{books}}' class="main-item-t">
+    <view class="main-item-t-t">
+      <view class="main-item-t-t-l">
+        <image class="headImg" src="{{item.headimg}}">
+        </image>
+      </view>
+      <view class="main-item-t-t-2">
+        <view class="userName">{{item.userName}}</view>
+        <view class="created">{{item.created}}</view>
+      </view>
+    </view>
+    <view class="main-item-t-m">
+      <view class="main-item-t-m-title">{{item.title}}</view>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class="decription">这个api没有描述，不好意思</view>
+        
+</view>

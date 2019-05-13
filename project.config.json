@@ -45,7 +45,7 @@
 				{
 					"id": 0,
 					"name": "book",
-					"pathName": "pages/resource/resource",
+					"pathName": "pages/resourcedetail/resourcedetail",
 					"query": "",
 					"scene": null
 				}
