@@ -1,4 +1,4 @@
-// pages/ resource/ resource.js
+// pages/resourcedetail/resourcedetail.js
 Page({
 
   /**

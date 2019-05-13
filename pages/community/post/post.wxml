@@ -33,7 +33,7 @@
           <image src='/images/my/xiaoyan.png' class='icon'></image>
           <view class='username'>不停息的风</view>
         </view>
-        <view class='content'>这里是内容</view>
+        <view class='content'>这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容</view>
       </view>
       <!--右部 -->
       <image class='right' src='/images/community/circle/ts.jpg'></image>

@@ -1,2 +1,16 @@
 <!--pages/notebook/notebooks.wxml-->
-<text>pages/notebook/notebooks.wxml</text>
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:focus='onseach' />
+<view class="items">
+  <block wx:for="{{books}}" wx:key=''>
+    <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
+      <view>
+        <view>
+          <image src="{{item.images.medium}}" class='itemimg'></image>
+        </view>
+        <view class="name">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

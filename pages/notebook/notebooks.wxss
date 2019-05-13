@@ -1,1 +1,34 @@
 /* pages/notebook/notebooks.wxss */
+.items {
+  background-color: #f2f2f2;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  background: #ededed;
+}
+
+.item {
+  float: left;
+  width: 48%;
+  margin: 1.5% 1%;
+  background: #fff;
+  border-radius: 15rpx;
+  position: relative;
+  height: 500rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.itemimg {
+  align-items: center;
+  height: 400rpx;
+  width: 357rpx;
+  border-radius: 10rpx;
+ 
+}

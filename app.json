@@ -15,7 +15,8 @@
     "pages/bookdetails/bookdetail",
     "pages/book/books",
     "pages/notebook/notebooks",
-    "pages/resource/resource"
+    "pages/resource/resource",
+    "pages/resourcedetail/resourcedetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#87CEFF",

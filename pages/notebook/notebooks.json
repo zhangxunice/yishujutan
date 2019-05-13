@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "笔记",
+  "usingComponents": {
+    "van-search": "/dist/search/index"
+  }
 }
