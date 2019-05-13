@@ -27,13 +27,13 @@ page{
 }
 
 .tui-tabbar-group {
-  border: 1px solid #4cd964;
+  border: 1px solid #e64340;
   border-radius: 3px;
   overflow: hidden;
   width: 100%;
   display: table;
   table-layout: fixed;
-  color: #4cd964;
+  color: #e64340;
 }
 
 .tui-tabbar-cell {
@@ -46,11 +46,11 @@ page{
 }
 
 .tui-tabbar-cell:not(:last-child) {
-  border-right: 1px solid #4cd964;
+  border-right: 1px solid #e64340;
 }
 
 .tui-tabbar-cell.tui-active {
-  background-color: #4cd964;
+  background-color: #e64340;
   color: #fff;
 }
 

@@ -1,4 +1,5 @@
 // pages/community/posting/posting.js
+var app = getApp();
 Page({
 
   /**
@@ -6,6 +7,31 @@ Page({
    */
   data: {
 
+  },
+
+  back: function () {
+    wx.navigateBack({
+      delta: -1
+    });
+  },
+
+  issue: function (e) {
+    var user_id = app.globalData.user_id;
+    wx.request({
+      url: 'http://127.0.0.1:8080/issue',
+      data: {
+        'title': e.detail.value.title,
+        'content': e.detail.value.content,
+        'user_id': user_id
+      },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
   },
 
   /**

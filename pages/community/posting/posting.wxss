@@ -10,10 +10,18 @@
   display: inline;
   color: #9c6c6c;
 } 
+button::after{
+  border: none;
+}
 .issue{
   margin-right: 20rpx;
+  margin-bottom: 20rpx;
   float: right;
   color: #f16033;
+  height: 50rpx;
+  border: 0rpx solid white;
+  line-height: 50rpx;
+  background-color: white;
 }
 .text{
   padding: 20rpx;

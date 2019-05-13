@@ -1,5 +1,9 @@
 {
   "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#e64340",
+  "navigationBarTitleText": "商场",
+  "navigationBarTextStyle": "white",
   "usingComponents": {
     "van-like": "/dist/like/index",
     "van-row": "/dist/row/index",

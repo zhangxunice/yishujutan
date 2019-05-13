@@ -13,15 +13,15 @@
 </view>
 
 <view class='group2'>
-  <view class='message' wx:for='{{message}}' wx:key='id'>
+  <view class='message' wx:for='{{follows}}' wx:key='id'>
     <view class='icon'>
       <image src='{{item.icon}}'></image>
       <view class='tips' wx:if='{{item.msgNumber > 0}}'>{{item.msgNumber}}</view>
     </view>
     <view class='content' data-index='{{item.id-1}}' bindtap='seeDetail'>
-      <view class='content1'>{{item.content1}}</view>
-      <view class='content2'>{{item.content2}}</view>
+      <view class='content1'>{{item.nickname}}</view>
+      <view class='content2'>{{item.lastEssay}}</view>
     </view>
-    <view class='time'>{{item.time}}</view>
+    <view class='time'>{{item.lastEssayIssueDate}}</view>
   </view>
 </view>

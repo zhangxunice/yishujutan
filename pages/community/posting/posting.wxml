@@ -1,18 +1,19 @@
 <!--pages/community/posting/posting.wxml-->
-<view class='top'>
-  <view class='cancle'>取消</view>
-  <view class='issue'>发布</view>
-</view>
-
-<form>
+<form bindsubmit='issue'>
+  <view class='top'>
+    <view class='cancle' bindtap='back'>取消</view>
+    <button form-type='submit' class='issue'>发布</button>
+  </view>
   <view class='text'>
   <view class='title'>
-    <input placeholder='请在此输入标题' placeholder-style='color:#696969'></input>
+    <input placeholder='请在此输入标题' placeholder-style='color:#696969' name='title'/>
   </view>
   <view class='content'>
-    <textarea placeholder='请在次输入内容' contenteditable='true' auto-height='true'></textarea>
+    <textarea placeholder='请在次输入内容' contenteditable='true' 
+    name='content' auto-height='true'/>
   </view>
 </view>
+
 </form>
 
 <view class='bottom'>

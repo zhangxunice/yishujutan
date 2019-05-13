@@ -4,7 +4,7 @@
     <image src='/images/icon/search.png'></image>
     <input placeholder='推送帖子标题'></input>
   </view>
-  <view class='post' bindtap='toPosting'>去发帖</view>
+  <view class="post" bindtap='toPosting'>去发帖</view>
   <view class='nav'>
     <view class='navName' data-index='1' bindtap='switch_nav'>关  注
       <view class='blackBar' style='opacity:{{show==1?1:0}};'></view>
@@ -22,7 +22,7 @@
   <!--填补top的空白 -->
   <view style='height:145rpx;'></view>
   <!--帖子的布局 -->
-  <view class='item' wx:for='qwerty'>
+  <view class='item' wx:for='qwerty'wx:key=''>
     <!--标题 -->
     <view class='title'>这里是标题</view>
     <!--中间内容 -->
@@ -33,10 +33,10 @@
           <image src='/images/my/xiaoyan.png' class='icon'></image>
           <view class='username'>不停息的风</view>
         </view>
-        <view class='content'>这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容；这里是内容</view>
+        <view class='content'>这里是内容</view>
       </view>
       <!--右部 -->
-      <image class='right' src='/images/community/circle/ts.jpg'></image>
+      <image class='right' src='/images/community/circle/ts.jpg' wx:if='{{0}}'></image>
     </view>
     <!--底部 -->
     <view class='bottom'>

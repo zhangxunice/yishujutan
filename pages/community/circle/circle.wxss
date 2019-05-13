@@ -25,7 +25,7 @@
 }
 .apply{
   margin-left: 45rpx;
-  background-color: #95dfde;
+  background-color: #e64340;
   color: white;
   width: 20%;
   height: 70rpx;

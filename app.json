@@ -19,10 +19,9 @@
     "pages/resourcedetail/resourcedetail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#87CEFF",
+    "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#7CFC00"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#e64340",

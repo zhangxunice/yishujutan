@@ -2,5 +2,6 @@
   "usingComponents": {},
   "backgroundTextStyle": "light",
   "navigationBarTitleText": "社交",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#e64340"
 }

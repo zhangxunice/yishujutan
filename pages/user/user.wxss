@@ -12,7 +12,8 @@ page{
   padding-top: 20rpx;
   text-align: center;
 }
-.imgView image{
+.usericon{
+  margin: auto;
   overflow: hidden;
   background-color: white;
   width: 200rpx;
@@ -20,7 +21,7 @@ page{
   border: 10rpx solid white;
   border-radius: 50%; 
 }
-.imgView view{
+.nickname{
   color: white;
 }
 .btnGroup{
