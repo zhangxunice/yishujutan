@@ -102,16 +102,20 @@ Page({
       animInput: animationInput.export(),
     })
   },
-  input: function() {
-    console.log("input")
+  onrelease: function() {
+    wx.navigateTo({
+      url: '/pages/user/releasebook/releasebook',
+    })
   },
   transpond: function() {
     wx.navigateTo({
       url: '/pages/community/posting/posting',
     })
   },
-  collect: function() {
-    console.log("collect")
+  onlink:function(){
+    wx.navigateTo({
+      url: '/pages/user/releaselink/releaselink',
+    })
   },
 
 

@@ -16,8 +16,8 @@
     "pages/home/bookdetails/bookdetail",
     "pages/home/book/books",
     "pages/home/notebook/notebooks",
-    "pages/home/resource/resource",
-    "pages/home/resourcedetail/resourcedetail"
+    "pages/user/resource/resource",
+    "pages/user/resourcedetail/resourcedetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "white",

@@ -28,7 +28,7 @@ Page({
       icon: '/images/icon/notebook.png',
     }, {
       id: 3,
-      name: '资  源',
+      name: '资  料',
       icon: '/images/icon/means.png',
 
     }],
