@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<view>123</view>
 <view>
   <!-- <搜索框> -->
   <van-search shape='round' placeholder="找不到？搜一搜！" bind:focus='onseach' />
