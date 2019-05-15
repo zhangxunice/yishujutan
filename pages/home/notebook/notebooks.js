@@ -1,7 +1,7 @@
 // pages/notebook/notebooks.js
 
 const app = getApp()
-var util = require('../../utils/util.js')
+var util = require('../../../utils/util.js')
 Page({
 
   /**

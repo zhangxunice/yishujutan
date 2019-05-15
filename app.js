@@ -53,5 +53,4 @@ App({
     appid: 'wx094047c54a0a03e1',
     secret: 'feb08eb0414344647cb5f4bcc8c32377'
   },
-
 })

@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/search/search",
+    "pages/home/search/search",
     "pages/user/user",
     "pages/user/myCollect",
     "pages/user/myIssue",
+    "pages/user/setting",
     "pages/community/community",
     "pages/community/friendsinfo",
     "pages/community/circle/circle",
@@ -12,11 +13,11 @@
     "pages/community/circle/detail",
     "pages/community/post/post",
     "pages/community/posting/posting",
-    "pages/bookdetails/bookdetail",
-    "pages/book/books",
-    "pages/notebook/notebooks",
-    "pages/resource/resource",
-    "pages/resourcedetail/resourcedetail"
+    "pages/home/bookdetails/bookdetail",
+    "pages/home/book/books",
+    "pages/home/notebook/notebooks",
+    "pages/home/resource/resource",
+    "pages/home/resourcedetail/resourcedetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "white",

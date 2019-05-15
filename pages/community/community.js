@@ -21,7 +21,6 @@ Page({
       name: '圈  子',
       bgColor: '#95dfde',
       icon: '/images/community/circle_white.png',
-
     }],
 
     message: [{
@@ -141,7 +140,7 @@ Page({
 
     var user_id = app.globalData.user_id;
     wx.request({
-      url: 'http://127.0.0.1:8080/getFollows',
+      url: 'http://yishujutan.free.idcfengye.com/getFollows',
       data: {
         'user_id': user_id
       },

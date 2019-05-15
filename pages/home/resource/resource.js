@@ -1,6 +1,6 @@
 // pages/resource/resource.js
 const app = getApp()
-var util = require('../../utils/util.js')
+var util = require('../../../utils/util.js')
 Page({
 
   /**

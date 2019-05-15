@@ -6,7 +6,7 @@
   </van-search>
   <view class='hr'></view>
   <view wx:for='{{books}}' class="main-item">
-    <navigator url="/pages/resourcedetail/resourcedetail?id={{item.id}}">
+    <navigator url="/pages/home/resourcedetail/resourcedetail?id={{item.id}}">
       <view class="main-item-t">
         <view class="main-item-t-t">
           <view class="main-item-t-t-1">

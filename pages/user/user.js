@@ -7,15 +7,15 @@ Page({
   data: {
     username: 'null',
     options: [{
-      id: 1,
+      id: '1',
       text: '我的发布',
       icon: '/images/my/issue.png',
       }, {
-      id: 2,
+      id: '2',
       text: '我的圈子',
       icon: '/images/my/circle.png',
       }, {
-      id: 3,
+      id: '3',
       text: '我的收藏',
       icon: '/images/my/like.png',
     }]
@@ -24,19 +24,23 @@ Page({
   jumpToMy: function(event){
     var address = '';
     switch (event.currentTarget.dataset.index){
-      case 1:
+      case '1':
         address = 'myIssue';
         break;
-      case 2:
+      case '2':
         address = '../community/circle/circle';
         break;
-      case 3:
+      case '3':
         address = 'myCollect';
+        break;
+      case '4':
+        address = 'setting';
         break;
     }
     wx.navigateTo({
       url: address
     })
+    console.log(address);
   },
 
   /**

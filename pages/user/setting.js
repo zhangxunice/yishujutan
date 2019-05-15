@@ -1,44 +1,18 @@
-// pages/community/posting/posting.js
-var app = getApp();
+// pages/user/setting.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  back: function () {
-    wx.navigateBack({
-      delta: -1
-    });
-  },
-
-  issue: function (e) {
-    var user_id = app.globalData.user_id;
-    wx.request({
-      url: 'http://yishujutan.free.idcfengye.com/issue',
-      data: {
-        'title': e.detail.value.title,
-        'content': e.detail.value.content,
-        'user_id': user_id
-      },
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
-    })
+    src: 'http://www.omegaxyz.com/2018/02/06/sysniffer/'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
   },
 
   /**
@@ -52,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(this.data.src);
   },
 
   /**

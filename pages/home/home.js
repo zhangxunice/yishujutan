@@ -49,7 +49,7 @@ Page({
 
   onseach: function() {
     wx.navigateTo({
-      url: '../search/search',
+      url: 'search/search',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
@@ -59,7 +59,7 @@ Page({
   ondetails: function(e) {
     var id = e.currentTarget.dataset.index;
     wx.navigateTo({
-      url: '../bookdetails/bookdetail?id=' + id,
+      url: 'bookdetails/bookdetail?id=' + id,
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
@@ -69,13 +69,13 @@ Page({
     var address = ''
     switch (e.currentTarget.dataset.index) {
       case 1:
-        address = '/pages/book/books';
+        address = '/pages/home/book/books';
         break;
       case 2:
-        address = '/pages/notebook/notebooks';
+        address = '/pages/home/notebook/notebooks';
         break;
       case 3:
-        address = '/pages/resource/resource';
+        address = '/pages/home/resource/resource';
         break;
     }
     wx.navigateTo({

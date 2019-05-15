@@ -1,5 +1,5 @@
 // pages/resourcedetail/resourcedetail.js
-var util = require('../../utils/util.js')
+var util = require('../../../utils/util.js')
 Page({
 
   /**
