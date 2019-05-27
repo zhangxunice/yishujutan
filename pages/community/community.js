@@ -22,59 +22,7 @@ Page({
       bgColor: '#95dfde',
       icon: '/images/community/circle_white.png',
     }],
-
-    message: [{
-      id: 1,
-      icon: '/images/community/xiaoyan.png',
-      msgNumber: 1,
-      content1: '不停息的风',
-      content2: '飞流直下三千尺',
-      time: '今天'
-    }, {
-      id: 2,
-      icon: '/images/community/zhang.png',
-      msgNumber: 0,
-      content1: '张旭',
-      content2: '疑是银河落九天',
-      time: '昨天'
-    }, {
-      id: 3,
-      icon: '/images/community/zuo.png',
-      msgNumber: 0,
-      content1: '左智豪',
-      content2: '床前明月光',
-      time: '星期五'
-    }, {
-      id: 4,
-      icon: '/images/community/chen.png',
-      msgNumber: 1,
-      content1: '陈桓',
-      content2: '疑是地上霜',
-      time: '星期四'
-    }, {
-      id: 5,
-      icon: '/images/community/kun.png',
-      msgNumber: 3,
-      content1: '张坤',
-      content2: '两个黄莹鸣翠柳',
-      time: '星期四'
-    }, {
-      id: 6,
-      icon: '/images/community/img.png',
-      msgNumber: 0,
-      content1: '管理员',
-      content2: '这里是内容',
-      time: '星期二'
-    }, {
-      id: 7,
-      icon: '/images/my/my.png',
-      msgNumber: 2,
-      content1: '书友',
-      content2: '这里是内容',
-      time: '星期二'
-    }]
   },
-
 
   jump: function (event) {
     var index = event.currentTarget.dataset.index;
@@ -97,7 +45,7 @@ Page({
       url: jumpTo,
     })
   },
-
+/*
   getTotalMsgNumber: function () {
     console.log('调用getTotalMsgNumber');
     var total = 0;
@@ -109,18 +57,12 @@ Page({
       totalMsg: total
     })
   },
+*/
 
   seeDetail: function (event) {
-    var index = event.currentTarget.dataset.index;
-    if (this.data.message[index].msgNumber > 0) {
-      var data = 'message[' + index + '].msgNumber';
-      this.setData({
-        [data]: 0
-      })
-      this.getTotalMsgNumber();
-    }
+    var user_id = event.currentTarget.dataset.user_id;
     wx.navigateTo({
-      url: 'friendsinfo',
+      url: 'friendsinfo?user_id=' + user_id,
     })
   },
   /**
@@ -128,19 +70,20 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var total = 0;
-    var i;
-    for (i = 0; i < this.data.message.length; i++) {
-      total += this.data.message[i].msgNumber;
-    }
-    var that = this;
-    that.setData({
-      totalMsg: total
-    })
+    // var total = 0;
+    // var i;
+    // for (i = 0; i < this.data.message.length; i++) {
+    //   total += this.data.message[i].msgNumber;
+    // }
+    // var that = this;
+    // that.setData({
+    //   totalMsg: total
+    // })
 
     var user_id = app.globalData.user_id;
+    var url = app.globalData.url;
     wx.request({
-      url: 'http://yishujutan.free.idcfengye.com/getFollows',
+      url: url + 'getFollows',
       data: {
         'user_id': user_id
       },
@@ -206,3 +149,4 @@ Page({
 
   }
 })
+

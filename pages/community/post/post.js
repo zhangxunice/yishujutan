@@ -17,8 +17,9 @@ Page({
   
   showEssay: function(){
     var that = this;
+    var url = app.globalData.url;
     wx.request({
-      url: 'http://yishujutan.free.idcfengye.com/getEssaysByShowType',
+      url: url + 'getEssaysByShowType',
       data: {
         showType: that.data.essayShowType,
         number: 10,

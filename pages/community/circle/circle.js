@@ -1,4 +1,5 @@
 // pages/community/circle/circle.js
+var app = getApp();
 Page({
 
   /**
@@ -9,45 +10,6 @@ Page({
     show2: false,
     src1: '/images/community/right.png',
     src2: '/images/community/right.png',
-
-    myJoin: [{
-      id: 0,
-      index: 0,
-      circleIcon: '/images/community/circle/dpcq.jpg',
-      circleName: '斗破苍穹',
-    },{
-      id: 1,
-      index: 1,
-        circleIcon: '/images/community/circle/jobs.jpg',
-      circleName: '乔布斯传',
-    },{
-      id: 2,
-      index: 2,
-        circleIcon: '/images/community/circle/pfdrs.jpg',
-      circleName: '平凡的人生',
-    }],
-    
-    myBrowse: [{
-      id: 3,
-      index: 0,
-      circleIcon: '/images/community/circle/ky.jpg',
-      circleName: '考研',
-    }, {
-      id: 4,
-      index: 1,
-        circleIcon: '/images/community/circle/jsjzcyl.jpg',
-      circleName: '计算机组成原理',
-    }, {
-      id: 5,
-      index: 2,
-        circleIcon: '/images/community/circle/ts.jpg',
-      circleName: '唐诗三百首',
-    }, {
-      id: 6,
-      index: 3,
-        circleIcon: '/images/community/circle/zggds.jpg',
-      circleName: '中国古代史',
-    }]
   },
 
   showMyJoin: function(){
@@ -93,7 +55,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var url = app.globalData.url;
+    wx.request({
+      url: url + 'getCircles',
+      data: {
+        user_id: app.globalData.user_id
+      },
+      method: 'GET',
+      success(res){
+        console.log(res.data);
+        that.setData({
+          myJoin: res.data.collectingCircle,
+          myBrowse: res.data.browsedCircle,
+        })
+      },
+      fail(res){
+        console.log(res.errMsg);
+      }
+      
+    })
+    console.log(that.data);
   },
 
   /**

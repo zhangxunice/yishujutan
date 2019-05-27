@@ -1,50 +1,47 @@
 <!--pages/community/circle/detail.wxml-->
-<image src='{{icon}}' mode='aspectFill' class='bgImg'></image>
-<view class='bg'>
-  <view class='name'>{{name}}</view>
-  <view class='category'>{{category}}</view>
-  <view class='description'>{{description}}</view>
+<view class='bg' style='background-image:url({{circleinfo.circle_bg}});'>
+  <view class='name'>{{circleinfo.circle_name}}</view>
+  <view class='category'>{{circleinfo.circle_category}}</view>
+  <view class='description'>{{circleinfo.circle_description}}</view>
   <image class='writeNew' src='/images/community/add.png'></image>
 </view>
 
-<scroll-view scroll-y='true' scroll-with-animation='true' style='height:100vh;'>
-  <view style='height:250rpx;'></view>
+  <view wx:if='{{noEssay==true}}' class='content center'>该圈子还没有发布过帖子哦</view>
   <!--帖子的布局 -->
-  <view class='item' wx:for='qwerty'>
+  <view class='item' wx:for='{{essays}}' wx:key='essays' wx:if='{{noEssay==false}}'>
     <!--标题 -->
-    <view class='title'>这里是标题</view>
+    <view class='title'>{{item.title}}</view>
     <!--中间内容 -->
     <view class='middle'>
       <!--左部 -->
       <view class='left'>
         <view class='user'>
-          <image src='/images/my/xiaoyan.png' class='icon'></image>
-          <view class='username'>不停息的风</view>
+          <image src='{{item.userIcon}}' class='icon'></image>
+          <view class='username'>{{item.nickname}}</view>
         </view>
-        <view class='content'>这里是内容</view>
+        <view class='content'>{{item.content}}</view>
       </view>
       <!--右部 -->
-      <image class='right' src='/images/community/circle/ts.jpg'></image>
+      <image class='right' src='/images/community/circle/ts.jpg' wx:if='{{item.have_picture}}'></image>
     </view>
     <!--底部 -->
     <view class='bottom'>
       <view>
         <image src='/images/community/forward.png' class='btnImg'></image>
-        <text>497</text>
+        <text>{{item.share_number}}</text>
       </view>
       <view>
         <image src='/images/community/comment.png' class='btnImg'></image>
-        <text>997</text>
+        <text>{{item.comment_number}}</text>
       </view>
       <view></view>
       <view>
         <image src='/images/community/great.png' class='btnImg'></image>
-        <text>7515</text>
+        <text>{{item.praise_number}}</text>
       </view>
       <view>
         <image src='/images/community/low.png' class='btnImg'></image>
-        <text>2</text>
+        <text>{{item.dislike_number}}</text>
       </view>
     </view>
   </view>
-</scroll-view>

@@ -133,3 +133,6 @@ text{
   padding: 5rpx;
   font-size: 28rpx;
 }
+.center{
+  text-align: center;
+}

@@ -3,22 +3,14 @@ page{
   background-color: whitesmoke;
 }
 .bg{
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 5%;
-  right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   color: #353535;
   height: 250rpx;
-}
-.bgImg{
-  width: 100%;
-  z-index: -1;
-  height: 250rpx;
-  opacity: 0.4;
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
 }
 .name{
   margin-top: 20rpx;
@@ -94,6 +86,8 @@ page{
 .content{
   font-size: 30rpx;
   color: #888888;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
 }
 .bottom{
   display: flex;
@@ -113,4 +107,8 @@ page{
 text{
   padding: 5rpx;
   font-size: 28rpx;
+}
+.center{
+  border-top: 1rpx solid #e64340;
+  text-align: center;
 }

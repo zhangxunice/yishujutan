@@ -5,14 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var user_id = options.user_id;
+    wx.request({
+      url: 'http://yishujutan.free.idcfengye.com/getUserPageInfo',
+      data: {
+        user_id: user_id
+      },
+      method: 'GET',
+      success(res){
+        that.setData({
+          user: res.data
+        })
+        console.log(that.data.user);
+      }
+    })
   },
 
   /**

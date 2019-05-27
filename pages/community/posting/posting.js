@@ -17,8 +17,9 @@ Page({
 
   issue: function (e) {
     var user_id = app.globalData.user_id;
+    var url = app.globalData.url;
     wx.request({
-      url: 'http://yishujutan.free.idcfengye.com/issue',
+      url: url + 'issue',
       data: {
         'title': e.detail.value.title,
         'content': e.detail.value.content,

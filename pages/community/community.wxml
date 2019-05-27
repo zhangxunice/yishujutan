@@ -18,7 +18,7 @@
       <image src='{{item.icon}}'></image>
       <view class='tips' wx:if='{{item.msgNumber > 0}}'>{{item.msgNumber}}</view>
     </view>
-    <view class='content' data-index='{{item.id-1}}' bindtap='seeDetail'>
+    <view class='content' data-user_id='{{item.user_id}}' bindtap='seeDetail'>
       <view class='content1'>{{item.nickname}}</view>
       <view class='content2'>{{item.lastEssay}}</view>
     </view>

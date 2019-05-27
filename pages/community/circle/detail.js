@@ -1,10 +1,12 @@
 // pages/community/circle/detail.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    request_time:0,
   
     circle: [{
       id: 0,
@@ -14,37 +16,37 @@ Page({
       circleDescription: ''
     },{
       id: 1,
-        circleIcon: '/images/community/circle/jobs.jpg',
+      circleIcon: '/images/community/circle/jobs.jpg',
       circleName: '乔布斯传',
       circleCategory: '名人传记',
       circleDescription: ''
     },{
       id: 2,
-        circleIcon: '/images/community/circle/pfdrs.jpg',
+      circleIcon: '/images/community/circle/pfdrs.jpg',
       circleName: '平凡的人生',
       circleCategory: '长篇小说',
       circleDescription: ''
     },{
       id: 3,
-        circleIcon: '/images/community/circle/ky.jpg',
+      circleIcon: '/images/community/circle/ky.jpg',
       circleName: '考研',
       circleCategory: '大学',
       circleDescription: ''
     }, {
       id: 4,
-        circleIcon: '/images/community/circle/jsjzcyl.jpg',
+      circleIcon: '/images/community/circle/jsjzcyl.jpg',
       circleName: '计算机组成原理',
       circleCategory: '大学',
       circleDescription: ''
     }, {
       id: 5,
-        circleIcon: '/images/community/circle/ts.jpg',
+      circleIcon: '/images/community/circle/ts.jpg',
       circleName: '唐诗三百首',
       circleCategory: '古代文学',
       circleDescription: ''
     }, {
       id: 6,
-        circleIcon: '/images/community/circle/zggds.jpg',
+      circleIcon: '/images/community/circle/zggds.jpg',
       circleName: '中国古代史',
       circleCategory: '学习',
       circleDescription: ''
@@ -56,11 +58,42 @@ Page({
    */
   onLoad: function (options) {
     var circleId = options.circleId;
-    this.setData({
-      icon: this.data.circle[circleId].circleIcon,
-      name: this.data.circle[circleId].circleName,
-      category: this.data.circle[circleId].circleCategory,
-      description: this.data.circle[circleId].circleDescription
+    var that = this;
+    var url = app.globalData.url;
+    wx.request({
+      url: url + 'getCircleInfo',
+      data: {
+        circle_id: circleId,
+        number: that.data.request_time
+      },
+      method: 'GET',
+      success(res){
+        console.log(res.data);
+        if(res.data.flag == 'no'){
+          that.setData({
+            noEssay: true,
+            circleinfo: res.data.circleinfo,
+          })
+        }else if (res.data.flag == 'no more'){
+          that.setData({
+            noMoreEssay: true,
+            noEssay: false,
+            request_time: that.data.request_time + 1,
+            circleinfo: res.data.circleinfo,
+            essays: res.data.essays,
+            flag: res.data.flag
+          })
+        }else{
+          that.setData({
+            noEssay: false,
+            noMoreEssay: false,
+            request_time: that.data.request_time + 1,
+            circleinfo: res.data.circleinfo,
+            essays: res.data.essays,
+            flag: res.data.flag
+          })
+        }
+      }
     })
   },
 
