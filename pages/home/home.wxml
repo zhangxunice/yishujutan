@@ -1,4 +1,11 @@
 <!--index.wxml-->
+<view class="login" wx:if="{{haveInfo==0}}">
+  <view style="width:70%;margin:200rpx auto;background:#fff;border-radius: 10px;padding:20px 20px;">
+  <image src='/images/icon/light.png' style="width:200rpx;height:200rpx;"></image>
+    <view style="margin-bottom:20px;text-align:center;line-height:2em;">为保障您的正常使用，请授权我们获取您的公开信息</view>
+    <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权</button>
+  </view>
+</view>
 <view>
   <!-- <搜索框> -->
   <van-search shape='round' placeholder="找不到？搜一搜！" bind:focus='onseach' />

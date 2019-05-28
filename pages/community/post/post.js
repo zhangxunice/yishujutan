@@ -1,10 +1,23 @@
 // pages/community/post/post.js
 var app = getApp();
+var util = require('../../../utils/util.js')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+  },
+
+  praise: function(event){
+    var that = this;
+    var index = event.currentTarget.dataset.index;
+    var number = 'essays[' + index + '].praise_number';
+
+    //执行app.js里的点赞方法
+   // var newNumber = app.praise(that.data.essays[index].essay_id);
+    that.setData({
+      [number]: app.praise(that.data.essays[index].essay_id)
+    })
   },
 
   switch_nav: function(event){
@@ -36,7 +49,8 @@ Page({
         }else {
           that.setData({
             haveEssay: 1,
-            essays: res.data
+            essays: res.data,
+            essaysTool: res.data
           })
         }
       }

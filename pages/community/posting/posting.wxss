@@ -27,12 +27,13 @@ button::after{
   padding: 20rpx;
 }
 .title{
+  font-size: 42rpx;
   padding-bottom: 10rpx; 
   font-weight: bold;
 }
 .content{
   color: #888888;
-  font-size: 30rpx;
+  font-size: 35rpx;
   height: 500rpx;
 }
 .bottom{

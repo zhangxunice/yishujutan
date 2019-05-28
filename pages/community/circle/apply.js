@@ -1,4 +1,5 @@
 // pages/community/circle/apply.js
+var app = getApp();
 Page({
 
   /**
@@ -6,6 +7,27 @@ Page({
    */
   data: {
 
+  },
+
+  apply: function (e) {
+    var user_id = app.globalData.user_id;
+    var url = app.globalData.url;
+    wx.request({
+      url: url + 'applyCircle',
+      data: {
+        name: e.detail.value.name,
+        category: e.detail.value.category,
+        reason: e.detail.value.reason,
+        description: e.detail.value.description
+      },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log("申请成功")
+      }
+    })
   },
 
   /**

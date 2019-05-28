@@ -14,6 +14,10 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function test() {
+  console.log('ok');
+}
+
 function getDataKey() {
   return '0b2bdeda43b5688921839c8ecb20399b'
 }

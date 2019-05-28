@@ -53,6 +53,12 @@ Page({
     }]
   },
 
+  writeNew: function(){
+    wx.navigateTo({
+      url: '../posting/posting',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

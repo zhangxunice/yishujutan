@@ -10,7 +10,7 @@
   </view>
   <view class='content'>
     <textarea placeholder='请在次输入内容' contenteditable='true' 
-    name='content' auto-height='true'/>
+    name='content' auto-height='true' maxlength='-1' style='color:#353535;'/>
   </view>
 </view>
 

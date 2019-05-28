@@ -40,16 +40,16 @@
     </view>
     <!--底部 -->
     <view class='bottom'>
-      <view>
+      <view style='visibility:hidden;'>
         <image src='/images/community/forward.png' class='btnImg'></image>
         <text>{{item.share_number}}</text>
       </view>
-      <view>
+      <view style='visibility:hidden;'>
         <image src='/images/community/comment.png' class='btnImg'></image>
         <text>{{item.comment_number}}</text>
       </view>
       <view></view>
-      <view>
+      <view bindtap='praise' data-index='{{index}}'>
         <image src='/images/community/great.png' class='btnImg'></image>
         <text>{{item.praise_number}}</text>
       </view>

@@ -1,4 +1,5 @@
 // pages/community/friendsinfo.js
+var app = getApp();
 Page({
 
   /**
@@ -14,8 +15,9 @@ Page({
   onLoad: function (options) {
     var that = this;
     var user_id = options.user_id;
+    var url = app.globalData.url;
     wx.request({
-      url: 'http://yishujutan.free.idcfengye.com/getUserPageInfo',
+      url: url + 'getUserPageInfo',
       data: {
         user_id: user_id
       },

@@ -1,22 +1,22 @@
 <!--pages/community/circle/apply.wxml-->
 <view class='tips'>您正在申请创建新圈子，请按要求填写相关信息，提交申请后将由管理员进行审核</view>
 
-<form>
+<form bindsubmit='apply'>
   <view class='info'>
     <view>
       <view class='first'>
-        <input placeholder='名称' placeholder-style='color:#888888;'></input>
+        <input placeholder='名称' name='name' placeholder-style='color:#888888;'></input>
       </view>
       <view class='first'>
-        <input placeholder='类型' placeholder-style='color:#888888;'></input>
+        <input placeholder='类型' name='category' placeholder-style='color:#888888;'></input>
       </view>
       <view class='first'>
-        <input placeholder='地点' placeholder-style='color:#888888;'></input>
+        <input placeholder='理由' name='reason' placeholder-style='color:#888888;'></input>
       </view>
       <view class='addImage'>添加头像</view>
     </view>
-    <textarea placeholder='描述' maxlength='-1' class='second' placeholder-style='color:#888888;'></textarea>
+    <textarea placeholder='描述' name='description' maxlength='-1' class='second' placeholder-style='color:#888888;'></textarea>
   </view>
-  <view class='submit'>提交申请</view>
+  <button class='submit' form-type='submit'>提交申请</button>
 </form>
 

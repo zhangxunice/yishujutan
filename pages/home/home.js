@@ -83,8 +83,78 @@ Page({
     })
   },
 
+  //获取用户信息
+  bindGetUserInfo(e) {
+    console.log(e.detail.userInfo)
+    this.setData({
+      haveInfo: 1,
+      userInfo: e.detail.userInfo
+    })
+    console.log(userInfo);
+    app.globalData.haveInfo = 1;
+    //this.register();
+  },
+
+  //判断用户是否注册
+  isRegister: function () {
+    var that = this;
+    wx.request({
+      url: app.globalData.url + 'isRegister',
+      data: {
+        user_id: app.globalData.user_id
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res.data);
+        if(res.data == 0){
+          this.register();
+        }
+      },
+    })
+  },
+
+  //注册
+  register: function () {
+    wx.request({
+      url: app.globalData.url + 'register',
+      data: {
+        user_id: app.globalData.user_id,
+        nickname: this.data.userInfo.nickname,
+        icon: this.data.userInfo.avatarUrl
+      },
+      method: 'POST'
+    })
+  },
 
   onLoad: function(option) {
+    var that = this;
+    //获取信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          console.log("已授权");
+          that.setData({
+            haveInfo: 1,
+          })
+          app.globalData.haveInfo = 1;
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+            }
+          })
+        }else{
+          console.log("未授权");
+          that.setData({
+            haveInfo: 0,
+          })
+          app.globalData.haveInfo = 0;
+        }
+      }
+    })
+    
+    
+
     var key = util.getDataKey();
     wx: wx.request({
       url: 'https://api.douban.com/v2/movie/in_theaters?apikey=' + key,

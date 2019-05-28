@@ -3,7 +3,7 @@
   <view class='name'>{{circleinfo.circle_name}}</view>
   <view class='category'>{{circleinfo.circle_category}}</view>
   <view class='description'>{{circleinfo.circle_description}}</view>
-  <image class='writeNew' src='/images/community/add.png'></image>
+  <image class='writeNew' src='/images/community/add.png' bindtap='writeNew'></image>
 </view>
 
   <view wx:if='{{noEssay==true}}' class='content center'>该圈子还没有发布过帖子哦</view>
@@ -26,11 +26,11 @@
     </view>
     <!--底部 -->
     <view class='bottom'>
-      <view>
+      <view style='visibility:hidden;'>
         <image src='/images/community/forward.png' class='btnImg'></image>
         <text>{{item.share_number}}</text>
       </view>
-      <view>
+      <view style='visibility:hidden;'>
         <image src='/images/community/comment.png' class='btnImg'></image>
         <text>{{item.comment_number}}</text>
       </view>

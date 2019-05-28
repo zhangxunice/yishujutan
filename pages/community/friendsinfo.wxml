@@ -36,11 +36,11 @@
   </view>
   <!--底部 -->
   <view class='bottom'>
-    <view>
+    <view style='visibility:hidden;'>
       <image src='/images/community/forward.png' class='btnImg'></image>
       <text class='essay_number'>{{item.share_number}}</text>
     </view>
-    <view>
+    <view style='visibility:hidden;'>
       <image src='/images/community/comment.png' class='btnImg'></image>
       <text class='essay_number'>{{item.comment_number}}</text>
     </view>

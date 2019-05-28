@@ -1,5 +1,38 @@
 //app.js
 App({
+
+  test:function(){
+    return new function(){
+
+    }
+  },
+
+  praise: function(essay_id){
+    var that = this;
+    var user_id = that.globalData.user_id;
+    wx.request({
+      url: that.globalData.url + 'doPraise',
+      data: {
+        user_id: user_id,
+        essay_id: essay_id
+      },
+      method: "GET",
+      success: function (res) {
+        console.log(res.data);
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
+  doPraise: function(){
+    var p = new Promise(function (resolve, reject){
+
+    })
+  },
+
+
   onLaunch: function () {
     var that = this;
     // 展示本地存储能力
@@ -18,9 +51,10 @@ App({
             data: {},
             success: function (res) {
             console.log(res.data);
+            that.globalData.user_id = res.data.openid;
+            console.log(that.globalData);
             }
           })
-          console.log(res.code)
         } else {
           console.log("登录失败！" + res.errMsg)
         }
@@ -49,7 +83,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    user_id: 'rzz',
+    user_id: '',
     //url: 'http://yishujutan.free.idcfengye.com/',
     url: 'http://127.0.0.1:8080/',
     appid: 'wx094047c54a0a03e1',
