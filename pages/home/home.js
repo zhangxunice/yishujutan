@@ -65,6 +65,7 @@ Page({
       complete: function(res) {},
     })
   },
+  
   todetail: function(e) {
     var address = ''
     switch (e.currentTarget.dataset.index) {
@@ -83,22 +84,25 @@ Page({
     })
   },
 
-  //获取用户信息
+  //获取用户信息--用户授权按钮绑定的事件
   bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
+    //console.log(e.detail.userInfo);
+    //点击按钮后设置变量haveInfo为1，并将获取到的用户信息设置在data里
     this.setData({
       haveInfo: 1,
       userInfo: e.detail.userInfo
     })
-    console.log(userInfo);
+    console.log(this.data.userInfo);
     app.globalData.haveInfo = 1;
-    //this.register();
+    this.isRegister();
   },
 
   //判断用户是否注册
   isRegister: function () {
     var that = this;
+    console.log('执行isRegister方法前全局user_id为' + app.globalData.user_id);
     wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       url: app.globalData.url + 'isRegister',
       data: {
         user_id: app.globalData.user_id
@@ -107,7 +111,10 @@ Page({
       success: function (res) {
         console.log(res.data);
         if(res.data == 0){
-          this.register();
+          console.log('未注册');
+          that.register();
+        }else {
+          console.log('已注册');
         }
       },
     })
@@ -116,21 +123,27 @@ Page({
   //注册
   register: function () {
     wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       url: app.globalData.url + 'register',
       data: {
         user_id: app.globalData.user_id,
-        nickname: this.data.userInfo.nickname,
+        nickname: this.data.userInfo.nickName,
         icon: this.data.userInfo.avatarUrl
       },
-      method: 'POST'
+      method: 'POST',
+      success: function(){
+        console.log('执行注册成功');
+      }
     })
   },
 
+  //home页面每次加载时，先判断用户是否已经授权，若已经授权，则调用接口获取用户信息，并设置data里的haveInfo为1，否则将haveInfo设置为0。当haveInfo为0时，显示获取用户授权的按钮
   onLoad: function(option) {
     var that = this;
     //获取信息
     wx.getSetting({
       success: function (res) {
+        //判断用户是否已经授权
         if (res.authSetting['scope.userInfo']) {
           console.log("已授权");
           that.setData({
@@ -140,7 +153,11 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function (res) {
-              console.log(res.userInfo)
+              //console.log(res.userInfo)
+              that.setData({
+                userInfo: res.userInfo
+              })
+              console.log(that.data.userInfo)
             }
           })
         }else{
@@ -153,8 +170,6 @@ Page({
       }
     })
     
-    
-
     var key = util.getDataKey();
     wx: wx.request({
       url: 'https://api.douban.com/v2/movie/in_theaters?apikey=' + key,

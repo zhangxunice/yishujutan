@@ -1,7 +1,5 @@
 <!--pages/community/community.wxml-->
-
 <view class='nav'>{{totalMsg}}条消息未读</view>
-
 <view class='group1'>
   <view class='category' wx:for='{{category}}' wx:key='id'>
     <view class='circle' style='background-color:{{item.bgColor}};'

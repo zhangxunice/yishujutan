@@ -7,6 +7,7 @@ App({
     }
   },
 
+  //点赞功能
   praise: function(essay_id){
     var that = this;
     var user_id = that.globalData.user_id;
@@ -32,6 +33,27 @@ App({
     })
   },
 
+  login: function(code){
+    var that = this;
+    return new Promise(function(resolve, reject){
+      wx.request({
+        url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + that.globalData.appid + '&secret=' + that.globalData.secret + '&js_code=' + code + '&grant_type=authorization_code',
+        data: {},
+        success: function (res) {
+          //console.log(res.data);
+          //将获取到的openid设置为全局数据user_id
+          var openid = res.data.openid;
+          resolve(openid);
+          //that.globalData.user_id = res.data.openid;
+          //console.log(that.globalData);
+        },
+        fail: function (res) {
+          reject('返回openid出错');
+        }
+      })
+    })
+    
+  },
 
   onLaunch: function () {
     var that = this;
@@ -39,21 +61,19 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           var code = res.code;
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + that.globalData.appid + '&secret=' + that.globalData.secret + '&js_code=' + code + '&grant_type=authorization_code',
-            data: {},
-            success: function (res) {
-            console.log(res.data);
-            that.globalData.user_id = res.data.openid;
-            console.log(that.globalData);
-            }
+          that.login(code)
+          .then(function(openid){
+            console.log('user_id:' + openid);
+            that.globalData.user_id = openid;
+          })
+          .catch(function(error){
+            console.log(error);
           })
         } else {
           console.log("登录失败！" + res.errMsg)

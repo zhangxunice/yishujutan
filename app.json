@@ -29,7 +29,7 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "主页",
+        "text": "商场",
         "iconPath": "images/tab/home.png",
         "selectedIconPath": "images/tab/homefill.png"
       },
