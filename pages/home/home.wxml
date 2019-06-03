@@ -44,10 +44,10 @@
         <block wx:for="{{books}}" wx:key=''>
           <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
             <view>
-              <image src="{{item.images.medium}}" style="width:100px;height:150px;"></image>
+              <image src="{{item.book_picture}}" style="width:100px;height:150px;"></image>
             </view>
             <view class="name">
-              <text>{{item.title}}</text>
+              <text>{{item.book_name}}</text>
             </view>
           </view>
         </block>
@@ -56,9 +56,9 @@
     <!-- <大家最爱> -->
     <swiper-item>
       <view wx:for='{{books}}' wx:key=''>
-        <van-card price="{{item.collect_count}}" desc="{{item.year}}" title="{{item.title}}" thumb="{{item.images.small}}" data-index='{{item.id}}'bindtap='ondetails'>
+        <van-card price="{{item.book_price}}" desc="{{item.book_press}}" title="{{item.book_name}}" thumb="{{item.book_picture}}" data-index='{{item.id}}'bindtap='ondetails'>
           <view slot="tags">
-            <van-tag round type="primary"> {{item.genres}}</van-tag>
+            <van-tag round type="primary"> {{item.book_category}}</van-tag>
           </view>
         </van-card>
 

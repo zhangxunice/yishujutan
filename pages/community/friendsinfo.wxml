@@ -5,7 +5,8 @@
   </view>
   <view class='buttonLine'>
     <image class='addfriend' src='/images/community/addfriends.png'></image>
-    <view class='attention'>取消关注</view>
+    <view class='follow' bindtap='follow' wx:if='{{user.userinfo.isFollowed==1}}'>取消关注</view>
+    <view class='follow' bindtap='follow' wx:else>关注</view>
   </view>
   <view class='info'>
     <view class='name'>{{user.userinfo.nickname}}</view>
@@ -45,14 +46,16 @@
       <text class='essay_number'>{{item.comment_number}}</text>
     </view>
     <view></view>
-    <view>
-      <image src='/images/community/great.png' class='btnImg'></image>
-      <text class='essay_number'>{{item.praise_number}}</text>
-    </view>
-    <view>
-      <image src='/images/community/low.png' class='btnImg'></image>
-      <text class='essay_number'>{{item.dislike_number}}</text>
-    </view>
+    <!--点赞按钮 -->
+      <view bindtap='praise' data-index='{{index}}'>
+        <image wx:if='{{item.isPraised==0}}' src='/images/community/great.png' class='btnImg'></image>
+        <image src='/images/community/great_fill.png' class='btnImg' wx:else></image>
+        <text>{{item.praise_number}}</text>
+      </view>
+      <view>
+        <image src='/images/community/comment.png' class='btnImg'></image>
+        <text>{{item.comment_number}}</text>
+      </view>
   </view>
 </view>  
 

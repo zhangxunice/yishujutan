@@ -7,26 +7,6 @@ App({
     }
   },
 
-  //点赞功能
-  praise: function(essay_id){
-    var that = this;
-    var user_id = that.globalData.user_id;
-    wx.request({
-      url: that.globalData.url + 'doPraise',
-      data: {
-        user_id: user_id,
-        essay_id: essay_id
-      },
-      method: "GET",
-      success: function (res) {
-        console.log(res.data);
-      },
-      fail: function (res) {
-        console.log(res.errMsg)
-      }
-    })
-  },
-
   doPraise: function(){
     var p = new Promise(function (resolve, reject){
 

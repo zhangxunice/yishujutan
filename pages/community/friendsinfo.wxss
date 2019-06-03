@@ -31,7 +31,7 @@ page{
   justify-content: right;
   align-items: center;
 }
-.attention{
+.follow{
   font-size: 32rpx;
   text-align: center;
   line-height: 65rpx;
@@ -140,6 +140,10 @@ page{
 .btnImg{
   width: 50rpx;
   height: 50rpx;
+}
+text{
+  padding: 5rpx;
+  font-size: 28rpx;
 }
 .essay_number{
   padding: 5rpx;

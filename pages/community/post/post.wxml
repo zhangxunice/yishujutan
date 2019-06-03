@@ -49,13 +49,15 @@
         <text>{{item.comment_number}}</text>
       </view>
       <view></view>
+      <!--点赞按钮 -->
       <view bindtap='praise' data-index='{{index}}'>
-        <image src='/images/community/great.png' class='btnImg'></image>
+        <image wx:if='{{item.isPraised==0}}' src='/images/community/great.png' class='btnImg'></image>
+        <image src='/images/community/great_fill.png' class='btnImg' wx:else></image>
         <text>{{item.praise_number}}</text>
       </view>
       <view>
-        <image src='/images/community/low.png' class='btnImg'></image>
-        <text>{{item.dislike_number}}</text>
+        <image src='/images/community/comment.png' class='btnImg'></image>
+        <text>{{item.comment_number}}</text>
       </view>
     </view>
   </view>

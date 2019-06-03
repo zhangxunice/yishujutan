@@ -171,10 +171,10 @@ Page({
     })
     
     var key = util.getDataKey();
-    wx: wx.request({
-      url: 'https://api.douban.com/v2/movie/in_theaters?apikey=' + key,
+    var url = app.globalData.url;
+    wx.request({
+      url: url + '/bookinformation' ,
       data: {
-
       },
       header: {
         "Content-Type": "json"
@@ -185,7 +185,7 @@ Page({
       success: (res) => {
         console.log(res.data.subjects),
           this.setData({
-            books: res.data.subjects
+            books: res.data
           })
       },
       fail: function(res) {},

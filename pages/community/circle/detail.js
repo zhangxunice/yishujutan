@@ -7,50 +7,40 @@ Page({
    */
   data: {
     request_time:0,
-  
-    circle: [{
-      id: 0,
-      circleIcon: '/images/community/circle/dpcq.jpg',
-      circleName: '斗破苍穹',
-      circleCategory: '玄幻小说',
-      circleDescription: ''
-    },{
-      id: 1,
-      circleIcon: '/images/community/circle/jobs.jpg',
-      circleName: '乔布斯传',
-      circleCategory: '名人传记',
-      circleDescription: ''
-    },{
-      id: 2,
-      circleIcon: '/images/community/circle/pfdrs.jpg',
-      circleName: '平凡的人生',
-      circleCategory: '长篇小说',
-      circleDescription: ''
-    },{
-      id: 3,
-      circleIcon: '/images/community/circle/ky.jpg',
-      circleName: '考研',
-      circleCategory: '大学',
-      circleDescription: ''
-    }, {
-      id: 4,
-      circleIcon: '/images/community/circle/jsjzcyl.jpg',
-      circleName: '计算机组成原理',
-      circleCategory: '大学',
-      circleDescription: ''
-    }, {
-      id: 5,
-      circleIcon: '/images/community/circle/ts.jpg',
-      circleName: '唐诗三百首',
-      circleCategory: '古代文学',
-      circleDescription: ''
-    }, {
-      id: 6,
-      circleIcon: '/images/community/circle/zggds.jpg',
-      circleName: '中国古代史',
-      circleCategory: '学习',
-      circleDescription: ''
-    }]
+  },
+
+  praise: function (event) {
+    var that = this;
+    var index = event.currentTarget.dataset.index;
+    var isPraised = 'essays[' + index + '].isPraised';
+    var praise_number = 'essays[' + index + '].praise_number';
+
+    wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: app.globalData.url + 'doPraise',
+      data: {
+        user_id: app.globalData.user_id,
+        essay_id: that.data.essays[index].essay_id,
+        isPraised: that.data.essays[index].isPraised,
+      },
+      method: "POST",
+      success: function (res) {
+        if (that.data.essays[index].isPraised == 0) {
+          that.setData({
+            [praise_number]: that.data.essays[index].praise_number + 1,
+            [isPraised]: 1
+          })
+        } else {
+          that.setData({
+            [praise_number]: that.data.essays[index].praise_number - 1,
+            [isPraised]: 0
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
   },
 
   writeNew: function(){
@@ -69,8 +59,9 @@ Page({
     wx.request({
       url: url + 'getCircleInfo',
       data: {
+        user_id: app.globalData.user_id,
         circle_id: circleId,
-        number: that.data.request_time
+        circle_number: that.data.request_time
       },
       method: 'GET',
       success(res){

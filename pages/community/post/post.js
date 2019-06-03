@@ -11,12 +11,34 @@ Page({
   praise: function(event){
     var that = this;
     var index = event.currentTarget.dataset.index;
-    var number = 'essays[' + index + '].praise_number';
+    var isPraised = 'essays[' + index + '].isPraised';
+    var praise_number = 'essays[' + index + '].praise_number';
 
-    //执行app.js里的点赞方法
-   // var newNumber = app.praise(that.data.essays[index].essay_id);
-    that.setData({
-      [number]: app.praise(that.data.essays[index].essay_id)
+    wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: app.globalData.url + 'doPraise',
+      data: {
+        user_id: app.globalData.user_id,
+        essay_id: that.data.essays[index].essay_id,
+        isPraised: that.data.essays[index].isPraised,
+      },
+      method: "POST",
+      success: function (res) {
+        if (that.data.essays[index].isPraised==0){
+          that.setData({
+            [praise_number]: that.data.essays[index].praise_number + 1,
+            [isPraised]: 1
+          })
+        }else{
+          that.setData({
+            [praise_number]: that.data.essays[index].praise_number - 1,
+            [isPraised]: 0
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
     })
   },
 

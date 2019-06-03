@@ -59,9 +59,9 @@ Page({
 */
 
   seeDetail: function (event) {
-    var user_id = event.currentTarget.dataset.user_id;
+    var friends_id = event.currentTarget.dataset.user_id;
     wx.navigateTo({
-      url: 'friendsinfo?user_id=' + user_id,
+      url: 'friendsinfo?friends_id=' + friends_id,
     })
   },
   /**

@@ -9,17 +9,86 @@ Page({
     
   },
 
+  follow: function(){
+    var that = this;
+    var isFollowed = 'user.userinfo.isFollowed';
+    var follower_number = 'user.userinfo.follower_number';
+    wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: app.globalData.url + 'doFollow',
+      data: {
+        isFollowed: that.data.user.userinfo.isFollowed,
+        user_id: app.globalData.user_id,
+        friends_id: that.data.friends_id
+      },
+      method: 'POST',
+      success: function(){
+        if (that.data.user.userinfo.isFollowed==1){
+          that.setData({
+            [isFollowed]: 0,
+            [follower_number]: that.data.user.userinfo.follower_number - 1
+          })
+        }else{
+          that.setData({
+            [isFollowed]: 1,
+            [follower_number]: that.data.user.userinfo.follower_number + 1
+          })
+        }
+      },
+      fail: function(res){
+        console.log(res.errMsg);
+      }
+    })
+  },
+
+  praise: function (event) {
+    var that = this;
+    var index = event.currentTarget.dataset.index;
+    var isPraised = 'user.essays[' + index + '].isPraised';
+    var praise_number = 'user.essays[' + index + '].praise_number';
+
+    wx.request({
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: app.globalData.url + 'doPraise',
+      data: {
+        user_id: app.globalData.user_id,
+        essay_id: that.data.user.essays[index].essay_id,
+        isPraised: that.data.user.essays[index].isPraised,
+      },
+      method: "POST",
+      success: function (res) {
+        if (that.data.user.essays[index].isPraised == 0) {
+          that.setData({
+            [praise_number]: that.data.user.essays[index].praise_number + 1,
+            [isPraised]: 1
+          })
+        } else {
+          that.setData({
+            [praise_number]: that.data.user.essays[index].praise_number - 1,
+            [isPraised]: 0
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    var user_id = options.user_id;
+    that.setData({
+      friends_id: options.friends_id
+    })
     var url = app.globalData.url;
     wx.request({
       url: url + 'getUserPageInfo',
       data: {
-        user_id: user_id
+        user_id: app.globalData.user_id,
+        friends_id: options.friends_id
       },
       method: 'GET',
       success(res){
