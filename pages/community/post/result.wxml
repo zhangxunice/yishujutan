@@ -1,0 +1,42 @@
+<!--pages/community/post/result.wxml-->
+<view class='result'>搜索结果</view>
+<!--帖子的布局 -->
+  <view class='item' wx:for='{{essays}}'wx:key='essays'>
+    <!--标题 -->
+    <view class='title'>{{item.title}}</view>
+    <!--中间内容 -->
+    <view class='middle'>
+      <!--左部 -->
+      <view class='left'>
+        <view class='user'>
+          <image src='{{item.userIcon}}' data-user_id='{{item.user_id}}' bindtap='toUserPage' class='icon'></image>
+          <view class='username'>{{item.nickname}}</view>
+        </view>
+        <view class='content'>{{item.content}}</view>
+      </view>
+      <!--右部 -->
+      <image class='right' src='/images/community/circle/ts.jpg' wx:if='{{item.have_picture}}'></image>
+    </view>
+    <!--底部 -->
+    <view class='bottom'>
+      <view style='visibility:hidden;'>
+        <image src='/images/community/forward.png' class='btnImg'></image>
+        <text>{{item.share_number}}</text>
+      </view>
+      <view style='visibility:hidden;'>
+        <image src='/images/community/comment.png' class='btnImg'></image>
+        <text>{{item.comment_number}}</text>
+      </view>
+      <view></view>
+      <!--点赞按钮 -->
+      <view bindtap='praise' data-index='{{index}}'>
+        <image wx:if='{{item.isPraised==0}}' src='/images/community/great.png' class='btnImg'></image>
+        <image src='/images/community/great_fill.png' class='btnImg' wx:else></image>
+        <text>{{item.praise_number}}</text>
+      </view>
+      <view>
+        <image src='/images/community/comment.png' class='btnImg'></image>
+        <text>{{item.comment_number}}</text>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,82 @@
+/* pages/community/post/result.wxss */
+page{
+  background-color: whitesmoke;
+}
+.result{
+  font-size: 40rpx;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #353535;
+  padding: 10rpx;
+}
+.item{
+  padding: 20rpx;
+  margin-top: 10rpx;
+  background-color: white;
+}
+.title{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+.middle{
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.left{
+  flex: 1;
+}
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.right{
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+}
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+}
+.username{
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+  margin-bottom: 5rpx;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  color: #888888;
+}
+.content{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #888888;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+.bottom view{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnImg{
+  width: 50rpx;
+  height: 50rpx;
+}
+text{
+  padding: 5rpx;
+  font-size: 28rpx;
+}
+.center{
+  text-align: center;
+}

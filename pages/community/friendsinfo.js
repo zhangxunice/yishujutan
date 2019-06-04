@@ -6,7 +6,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+  },
+
+  addfriend: function(){
+    var that = this;
+    var wechat = that.data.user.userinfo.wechat;
+    if (wechat == ''){
+      wx.showToast({
+        title: '该用户没有留下Ta的联系方式哦',
+        icon: 'none',
+        duration: 2000
+      })
+    }else {
+      wx.setClipboardData({
+        data: wechat,
+        success: function(){
+          console.log(wechat);
+          wx.showToast({
+            title: 'Ta的微信已复制到剪切板 快去微信里添加好友吧',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    }
   },
 
   follow: function(){

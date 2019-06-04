@@ -21,6 +21,19 @@ page{
   flex-direction: row;
   align-items: center;
 }
+.submit{
+  height: 50rpx;
+  width: 50rpx;
+  background-repeat: no-repeat;
+  margin-right: 10rpx;
+}
+button::after{
+  border: none;
+}
+.search input{
+  flex: 5;
+  padding-left: 10rpx;
+}
 .post{
   position: fixed;
   top: 10rpx;
@@ -32,14 +45,6 @@ page{
   text-align: center;
   border-radius: 6rpx;
   line-height: 70rpx;
-}
-.search image{
-  width: 50rpx;
-  height: 50rpx;
-  margin-left: 5rpx;
-}
-.search input{
-  padding-left: 10rpx;
 }
 .nav{
   width: 100%;

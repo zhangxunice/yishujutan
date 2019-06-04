@@ -78,6 +78,7 @@ page{
 .username{
   margin-top: 5rpx;
   margin-bottom: 5rpx;
+  margin-left: 10rpx;
   font-size: 25rpx;
   line-height: 50rpx;
   font-weight: bold;

@@ -9,6 +9,15 @@ Page({
     request_time:0,
   },
 
+  //跳转到用户界面
+  toUserPage: function (event) {
+    var user_id = event.currentTarget.dataset.user_id;
+    wx.navigateTo({
+      url: '/pages/community/friendsinfo?friends_id=' + user_id,
+    })
+  },
+
+  //点赞
   praise: function (event) {
     var that = this;
     var index = event.currentTarget.dataset.index;
@@ -43,9 +52,11 @@ Page({
     })
   },
 
+  //发表新帖子
   writeNew: function(){
+    var that = this;
     wx.navigateTo({
-      url: '../posting/posting',
+      url: '../posting/posting?status=circle&circle_id=' + that.data.circleinfo.circle_id,
     })
   },
 

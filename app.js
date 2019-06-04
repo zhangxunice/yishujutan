@@ -7,12 +7,6 @@ App({
     }
   },
 
-  doPraise: function(){
-    var p = new Promise(function (resolve, reject){
-
-    })
-  },
-
   login: function(code){
     var that = this;
     return new Promise(function(resolve, reject){

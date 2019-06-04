@@ -16,14 +16,32 @@ Page({
   },
 
   issue: function (e) {
+    var title = e.detail.value.title;
+    var content = e.detail.value.content;
+    //如果没有输入内容，则title为''
+    // console.log(title);
+    // console.log(content);
+    if (title=='' || content==''){
+      wx.showToast({
+        title: '标题和内容不能为空哦',
+        icon: 'none',
+        duration: 2000
+      })
+      //返回，不在执行后续代码
+      return;
+    }
+    
+    var that = this;
     var user_id = app.globalData.user_id;
     var url = app.globalData.url;
     wx.request({
       url: url + 'issue',
       data: {
-        'title': e.detail.value.title,
-        'content': e.detail.value.content,
-        'user_id': user_id
+        title: title,
+        content: content,
+        user_id: user_id,
+        status: that.data.status,
+        circle_id: that.data.circle_id
       },
       method: 'POST',
       header: {
@@ -39,7 +57,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var status = options.status;
+    var circle_id = options.circle_id;
+    var that = this;
+    console.log(status);
+    if (status==undefined) {
+      that.setData({
+        status: '',
+        circle_id: null
+      })
+    }else {
+      that.setData({
+        status: status,
+        circle_id: circle_id
+      })
+    }
   },
 
   /**

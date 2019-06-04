@@ -4,7 +4,7 @@
     <image class='bigIcon' src='{{user.userinfo.icon}}'></image>
   </view>
   <view class='buttonLine'>
-    <image class='addfriend' src='/images/community/addfriends.png'></image>
+    <image class='addfriend' src='/images/community/addfriends.png' bindtap='addfriend'></image>
     <view class='follow' bindtap='follow' wx:if='{{user.userinfo.isFollowed==1}}'>取消关注</view>
     <view class='follow' bindtap='follow' wx:else>关注</view>
   </view>

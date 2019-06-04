@@ -6,6 +6,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    search_image: app.globalData.url + 'images/search.png'
+  },
+
+  toUserPage: function (event) {
+    var user_id = event.currentTarget.dataset.user_id;
+    wx.navigateTo({
+      url: '/pages/community/friendsinfo?friends_id=' + user_id,
+    })
+  },
+
+  search: function(e){
+    wx.navigateTo({
+      url: 'result?key=' + e.detail.value.value,
+    })
   },
 
   praise: function(event){

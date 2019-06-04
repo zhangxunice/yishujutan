@@ -16,7 +16,7 @@
       <!--左部 -->
       <view class='left'>
         <view class='user'>
-          <image src='{{item.userIcon}}' class='icon'></image>
+          <image src='{{item.userIcon}}' data-user_id='{{item.user_id}}' bindtap='toUserPage' class='icon'></image>
           <view class='username'>{{item.nickname}}</view>
         </view>
         <view class='content'>{{item.content}}</view>

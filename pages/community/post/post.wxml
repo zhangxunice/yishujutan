@@ -1,9 +1,11 @@
 <!--pages/community/post/post.wxml-->
 <view class='top'>
-  <view class='search'>
-    <image src='/images/icon/search.png'></image>
-    <input placeholder='推送帖子标题'></input>
-  </view>
+  <form bindsubmit='search'>
+    <view class='search'>
+      <input placeholder='输入关键字查询' name='value'></input>
+      <button class='submit' form-type='submit' style="background-image: url({{search_image}});"></button>
+    </view>
+  </form>
   <view class="post" bindtap='toPosting'>去发帖</view>
   <view class='nav'>
     <view class='navName' data-type='f' bindtap='switch_nav'>关  注
@@ -30,7 +32,7 @@
       <!--左部 -->
       <view class='left'>
         <view class='user'>
-          <image src='{{item.userIcon}}' class='icon'></image>
+          <image src='{{item.userIcon}}' data-user_id='{{item.user_id}}' bindtap='toUserPage' class='icon'></image>
           <view class='username'>{{item.nickname}}</view>
         </view>
         <view class='content'>{{item.content}}</view>

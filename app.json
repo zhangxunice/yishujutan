@@ -12,6 +12,7 @@
     "pages/community/circle/apply",
     "pages/community/circle/detail",
     "pages/community/post/post",
+    "pages/community/post/result",
     "pages/community/posting/posting",
     "pages/home/bookdetails/bookdetail",
     "pages/home/book/books",
