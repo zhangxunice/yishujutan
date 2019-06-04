@@ -2,17 +2,17 @@
 <view class='container'>
   <view class='bookdetail1'>
     <view>
-      <image src='{{books.images.small}}' bindtap='previewImg' class='img' data-src='{{books.images.small}}' data-list='{{books.images}}'></image>
+      <image src='{{books.book_picture}}' bindtap='previewImg' class='img' data-src='{{books.book_picture}}' data-list='{{books.book_picture}}'></image>
     </view>
     <view class='bookdetail2'>
       <view class='bookdetail3'>
-        <text class='title'>{{books.title}}</text>
+        <text class='title'>{{books.book_name}}</text>
       </view>
       <view class='bookdetail3' style='margin-top: 50rpx'>
-        <text style='font-size=25rpx;font-weight:100'>作者：{{books.pubdates[0]}}</text>
+        <text style='font-size=25rpx;font-weight:100'>作者：{{books.issue_date}}</text>
       </view>
       <view class='bookdetail3' style='margin-top: 25rpx'>
-        <text style='font-size=25rpx;font-weight:100'>出版社：{{directors.name}}</text>
+        <text style='font-size=25rpx;font-weight:100'>出版社：{{books.book_press}}</text>
       </view>
     </view>
   </view>

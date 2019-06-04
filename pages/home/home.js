@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var util = require('../../utils/util.js')
+var url = app.globalData.url;
 
 Page({
   data: {
@@ -18,6 +18,7 @@ Page({
     indicatoractivecolor: "#FF7F50",
     circular: true,
     index: 0,
+    booktype: 'a',
     type: [{
       id: 1,
       name: '图  书',
@@ -36,16 +37,38 @@ Page({
   // 点击事件
   changeTabbar(e) {
     this.setData({
-      index: e.currentTarget.dataset.id
+      index: e.currentTarget.dataset.id,
+      booktype: e.currentTarget.dataset.booktype
     })
+    wx.request({
+      url: url + '/bookinformation',
+      data: {
+        booktype: this.data.booktype
+      },
+      header: {
+        "Content-Type": "json"
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: (res) => {
+        this.setData({
+          books: res.data
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+
+
   },
 
-  bindchange: function(e) {
-    const that = this;
-    that.setData({
-      currentData: e.detail.current
-    })
-  },
+  // bindchange: function(e) {
+  //   const that = this;
+  //   that.setData({
+  //     currentData: e.detail.current
+  //   })
+  // },
 
   onseach: function() {
     wx.navigateTo({
@@ -57,7 +80,7 @@ Page({
   },
 
   ondetails: function(e) {
-    var id = e.currentTarget.dataset.index;
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: 'bookdetails/bookdetail?id=' + id,
       success: function(res) {},
@@ -65,7 +88,7 @@ Page({
       complete: function(res) {},
     })
   },
-  
+
   todetail: function(e) {
     var address = ''
     switch (e.currentTarget.dataset.index) {
@@ -98,22 +121,24 @@ Page({
   },
 
   //判断用户是否注册
-  isRegister: function () {
+  isRegister: function() {
     var that = this;
     console.log('执行isRegister方法前全局user_id为' + app.globalData.user_id);
     wx.request({
-      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       url: app.globalData.url + 'isRegister',
       data: {
         user_id: app.globalData.user_id
       },
       method: 'POST',
-      success: function (res) {
+      success: function(res) {
         console.log(res.data);
-        if(res.data == 0){
+        if (res.data == 0) {
           console.log('未注册');
           that.register();
-        }else {
+        } else {
           console.log('已注册');
         }
       },
@@ -121,9 +146,11 @@ Page({
   },
 
   //注册
-  register: function () {
+  register: function() {
     wx.request({
-      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
       url: app.globalData.url + 'register',
       data: {
         user_id: app.globalData.user_id,
@@ -131,7 +158,7 @@ Page({
         icon: this.data.userInfo.avatarUrl
       },
       method: 'POST',
-      success: function(){
+      success: function() {
         console.log('执行注册成功');
       }
     })
@@ -142,7 +169,7 @@ Page({
     var that = this;
     //获取信息
     wx.getSetting({
-      success: function (res) {
+      success: function(res) {
         //判断用户是否已经授权
         if (res.authSetting['scope.userInfo']) {
           console.log("已授权");
@@ -152,7 +179,7 @@ Page({
           app.globalData.haveInfo = 1;
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
-            success: function (res) {
+            success: function(res) {
               //console.log(res.userInfo)
               that.setData({
                 userInfo: res.userInfo
@@ -160,7 +187,7 @@ Page({
               console.log(that.data.userInfo)
             }
           })
-        }else{
+        } else {
           console.log("未授权");
           that.setData({
             haveInfo: 0,
@@ -169,12 +196,10 @@ Page({
         }
       }
     })
-    
-    var key = util.getDataKey();
-    var url = app.globalData.url;
     wx.request({
-      url: url + '/bookinformation' ,
+      url: url + '/bookinformation',
       data: {
+        booktype: this.data.booktype
       },
       header: {
         "Content-Type": "json"
@@ -183,14 +208,12 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: (res) => {
-        console.log(res.data.subjects),
-          this.setData({
-            books: res.data
-          })
+        this.setData({
+          books: res.data
+        })
       },
       fail: function(res) {},
       complete: function(res) {},
     })
-  }
-
+  },
 })

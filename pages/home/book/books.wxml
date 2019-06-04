@@ -2,13 +2,13 @@
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:focus='onseach'  />
 <view class="items">
   <block wx:for="{{books}}" wx:key=''>
-    <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
+    <view class="item" bindtap='ondetails' data-index='{{item.book_id}}'>
       <view>
         <view >
-          <image src="{{item.images.medium}}" class='itemimg'></image>
+          <image src="{{item.book_picture}}" class='itemimg'></image>
         </view>
         <view class="name">
-          <text>{{item.title}}</text>
+          <text>{{item.book_name}}</text>
         </view>
       </view>
     </view>

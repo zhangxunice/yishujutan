@@ -1,5 +1,5 @@
 // pages/details/detail.js
-var util = require('../../../utils/util.js')
+const app = getApp()
 Page({
 
   /**
@@ -16,7 +16,8 @@ Page({
   },
   previewImg: function(e) {
     var curr = e.currentTarget.dataset.src
-    var imagelist = this.data.imagelist
+    var list=e.currentTarget.dataset.list
+    var imagelist = list
     var imagearr = []
     for (var i in imagelist) {
       imagearr.push(imagelist[i]);
@@ -32,12 +33,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var key = util.getDataKey();
     var id = options.id;
+    console.log(id)
+    var url = app.globalData.url;
     wx.request({
-      url: 'https://api.douban.com/v2/movie/subject/' + id + '?apikey=' + key,
+      url: url + '/bookcontent',
       data: {
-
+        book_id:id
       },
       header: {
         "Content-Type": "json"
@@ -46,16 +48,14 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: (res) => {
-        console.log(res),
-          this.setData({
-            books: res.data,
-            directors: res.data.directors[0],
-            imagelist: res.data.images
-          })
+        this.setData({
+          books: res.data[0]
+        })
       },
-      fail: function(res) {},
-      complete: function(res) {},
+      fail: function (res) { },
+      complete: function (res) { },
     })
+
   },
 
   /**

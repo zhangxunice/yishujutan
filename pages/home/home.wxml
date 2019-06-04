@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="login" wx:if="{{haveInfo==0}}">
   <view style="width:70%;margin:200rpx auto;background:#fff;border-radius: 10px;padding:20px 20px;">
-  <image src='/images/icon/light.png' style="width:200rpx;height:200rpx;"></image>
+    <image src='/images/icon/light.png' style="width:200rpx;height:200rpx;"></image>
     <view style="margin-bottom:20px;text-align:center;line-height:2em;">为保障您的正常使用，请授权我们获取您的公开信息</view>
     <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">授权</button>
   </view>
@@ -33,16 +33,16 @@
   <view class='hr'></view>
   <view class="tui-tabbar-content">
     <view class="tui-tabbar-group">
-      <text data-id="0" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 0 ? 'tui-active' : ''}}">新品上架</text>
-      <text data-id="1" bindtap="changeTabbar" class="tui-tabbar-cell {{index == 1 ? 'tui-active' : ''}}">大家最爱</text>
+      <text data-id="0" bindtap="changeTabbar" data-booktype='a' class="tui-tabbar-cell {{index == 0 ? 'tui-active' : ''}}">新品上架</text>
+      <text data-id="1" bindtap="changeTabbar" data-booktype='b' class="tui-tabbar-cell {{index == 1 ? 'tui-active' : ''}}">大家最爱</text>
     </view>
   </view>
-  <swiper current="{{index}}" style="height:600px;" duration="300" bindchange="bindchange">
+  <swiper current="{{index}}" style="height:600px;" duration="300">
     <!-- <新品上架> -->
     <swiper-item>
       <view class="items">
         <block wx:for="{{books}}" wx:key=''>
-          <view class="item" bindtap='ondetails' data-index='{{item.id}}'>
+          <view class="item" bindtap='ondetails' data-id='{{item.book_id}}'>
             <view>
               <image src="{{item.book_picture}}" style="width:100px;height:150px;"></image>
             </view>
@@ -56,12 +56,11 @@
     <!-- <大家最爱> -->
     <swiper-item>
       <view wx:for='{{books}}' wx:key=''>
-        <van-card price="{{item.book_price}}" desc="{{item.book_press}}" title="{{item.book_name}}" thumb="{{item.book_picture}}" data-index='{{item.id}}'bindtap='ondetails'>
+        <van-card price="{{item.book_price}}" desc="{{item.book_press}}" title="{{item.book_name}}" thumb="{{item.book_picture}}" data-id='{{item.book_id}}' bindtap='ondetails'>
           <view slot="tags">
             <van-tag round type="primary"> {{item.book_category}}</van-tag>
           </view>
         </van-card>
-
       </view>
     </swiper-item>
   </swiper>
