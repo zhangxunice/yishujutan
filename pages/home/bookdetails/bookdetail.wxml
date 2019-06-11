@@ -1,9 +1,28 @@
 <!--pages/details/detail.wxml-->
+<view class='hr'>
+  <image src='http://img.mp.sohu.com/upload/20170714/d92129a6476e431f93010b52ef047269.png' style='height:75rpx;width:80rpx'></image>
+  <view style='margin-left:30rpx'>正在出售的卖家ing</view>
+</view>
+
 <view class='container'>
-  <view class='bookdetail1'>
-    <view>
+  <view>
+    <view class='bookdetail1'>
       <image src='{{books.book_picture}}' bindtap='previewImg' class='img' data-src='{{books.book_picture}}' data-list='{{books.book_picture}}'></image>
     </view>
+
+    <view class="main-item">
+      <!-- <view wx:for='{{books}}' class="main-item-t"> -->
+      <view class="main-item-t-t">
+        <view class="main-item-t-t-l">
+          <image class="headImg" src="/images/my/xiaoyan.png"></image>
+        </view>
+        <view class="main-item-t-t-2">
+          <view class="userName">月满西楼</view>
+          <view class="created">2019-6-11 11:46</view>
+        </view>
+      </view>
+    </view>
+
     <view class='bookdetail2'>
       <view class='bookdetail3'>
         <text class='title'>{{books.book_name}}</text>
@@ -14,30 +33,15 @@
       <view class='bookdetail3' style='margin-top: 25rpx'>
         <text style='font-size=25rpx;font-weight:100'>出版社：{{books.book_press}}</text>
       </view>
+      <view class='bookdetail3' style='margin-top: 25rpx'>
+        <text style='font-size=25rpx;font-weight:100'>商品描述：</text>
+      </view>
+      <view class='bookdetail3' style='margin-top: 25rpx'>
+        <text class='bookdesc'>{{books.book_description}}</text>
+      </view>
+      <view class='bookdetail3' style='margin-top: 25rpx'>
+        <text style='font-size=25rpx;font-weight:100'>联系方式：15179152606</text>
+      </view>
     </view>
   </view>
-
-
-  <view class='container2'>
-    <view class='hr'>
-      <image src='http://img.mp.sohu.com/upload/20170714/d92129a6476e431f93010b52ef047269.png' style='height:75rpx;width:80rpx'></image>
-      <view style='margin-left:30rpx'>正在出售的卖家ing</view>
-    </view>
-    <view style='margin-top:10rpx'>
-      <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
-        <van-collapse-item icon='manager'>
-          <view slot="title" class='seller'>
-            {{books.title}}
-          </view>
-          <view>
-            商品描述： {{books.summary}}
-          </view>
-          <view>
-            联系方式：151
-          </view>
-        </van-collapse-item>
-      </van-collapse>
-    </view>
-  </view>
-
 </view>

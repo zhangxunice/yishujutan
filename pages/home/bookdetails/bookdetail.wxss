@@ -7,6 +7,8 @@
 .bookdetail1 {
   display: flex;
   padding: 20rpx;
+  justify-content: center;
+  align-items: center
 }
 
 .bookdetail2 {
@@ -16,9 +18,9 @@
 }
 
 .img {
-  height: 450rpx;
-  width: 300rpx;
-  border-radius: 20rpx;
+  height: 500rpx;
+  width: 50%;
+  
 }
 
 .title {
@@ -37,12 +39,61 @@
 
 .hr {
   display: flex;
-  background-color: #bff;
+  background-color: rgb(253, 84, 84);
   align-items: center;
   justify-content: center;
-  color: #ff3e96;
+  color: #130109;
   height: 80rpx;
   width: 100%;
   text-align: center;
   padding: 5rpx
+}
+.main-item {
+  background: #fff;
+  margin-bottom: 14rpx;
+}
+
+.main-item-t {
+  padding-bottom: 16rpx;
+}
+
+.main-item-t-t {
+  display: flex;
+}
+
+.main-item-t-t-l {
+  width: 80rpx;
+}
+
+.headImg {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 10rpx;
+  border-radius: 14rpx;
+}
+
+.main-item-t-t-2 {
+  flex: auto;
+  padding: 0 20rpx;
+}
+
+.userName {
+  color: #0745c1;
+  font-size: 34rpx;
+}
+
+.created {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.title {
+  color: #000;
+  font-weight: 590;
+  margin-bottom: 8rpx;
+  font-size: 42rpx;
+}
+.bookdesc{
+  font-size: 30rpx;
+  color: rgb(134, 134, 134);
 }
