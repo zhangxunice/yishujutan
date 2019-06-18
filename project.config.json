@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -53,6 +53,13 @@
 					"id": -1,
 					"name": "friendsinfo",
 					"pathName": "pages/community/friendsinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "帖子",
+					"pathName": "pages/community/essay",
 					"scene": null
 				}
 			]

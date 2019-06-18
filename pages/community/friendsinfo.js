@@ -8,6 +8,12 @@ Page({
   data: {
   },
 
+  comment: function(event){
+    wx.navigateTo({
+      url: '/pages/community/essay?essay_id=' + event.currentTarget.dataset.essay_id
+    })
+  },
+
   addfriend: function(){
     var that = this;
     var wechat = that.data.user.userinfo.wechat;

@@ -35,7 +35,7 @@
           <image src='{{item.userIcon}}' data-user_id='{{item.user_id}}' bindtap='toUserPage' class='icon'></image>
           <view class='username'>{{item.nickname}}</view>
         </view>
-        <view class='content'>{{item.content}}</view>
+        <view class='content' bindtap='comment' data-essay_id='{{item.essay_id}}'>{{item.content}}</view>
       </view>
       <!--右部 -->
       <image class='right' src='/images/community/circle/ts.jpg' wx:if='{{item.have_picture}}'></image>
@@ -58,7 +58,7 @@
         <text>{{item.praise_number}}</text>
       </view>
       <view>
-        <image src='/images/community/comment.png' class='btnImg'></image>
+        <image src='/images/community/comment.png' class='btnImg' bindtap='comment' data-essay_id='{{item.essay_id}}'></image>
         <text>{{item.comment_number}}</text>
       </view>
     </view>

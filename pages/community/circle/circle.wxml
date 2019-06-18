@@ -1,9 +1,11 @@
 <!--pages/community/circle/circle.wxml-->
 <view class='top'>
-  <view class='search'>
-    <image src='/images/icon/search.png'></image>
-    <input placeholder='输入关键字搜索'></input>
-  </view>
+  <form bindsubmit='search'>
+    <view class='search'>
+      <input placeholder='输入关键字查询' name='value'></input>
+      <button class='submit' form-type='submit' style="background-image: url({{search_image}});"></button>
+    </view>
+  </form>
   <view class='apply' bindtap='toApply'>申请</view>
 </view>
 

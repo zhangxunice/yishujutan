@@ -1,0 +1,7 @@
+<!--pages/community/circle/result.wxml-->
+<view class='itemGroup'>
+  <view class='item' wx:for='{{circles}}' wx:key='circles' bindtap='toDetail' id='{{item.circle_id}}'>
+    <image class='icon' src='{{item.circle_icon}}'></image>
+    <view class='content'>{{item.circle_name}}</view>
+  </view>
+</view>

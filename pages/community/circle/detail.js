@@ -9,6 +9,12 @@ Page({
     request_time:0,
   },
 
+  comment: function (event) {
+    wx.navigateTo({
+      url: '/pages/community/essay?essay_id=' + event.currentTarget.dataset.essay_id
+    })
+  },
+
   //跳转到用户界面
   toUserPage: function (event) {
     var user_id = event.currentTarget.dataset.user_id;

@@ -1,8 +1,6 @@
 /* pages/community/circle/circle.wxss */
 .top{
   width: 100%;
-  display: flex;
-  flex-direction: row;
   font-size: 30rpx;
 }
 .search{
@@ -15,23 +13,30 @@
   flex-direction: row;
   align-items: center;
 }
-.search image{
-  width: 50rpx;
+.submit{
   height: 50rpx;
-  margin-left: 10rpx;
+  width: 50rpx;
+  background-repeat: no-repeat;
+  margin-right: 10rpx;
+}
+button::after{
+  border: none;
 }
 .search input{
+  flex: 5;
   padding-left: 10rpx;
 }
 .apply{
-  margin-left: 45rpx;
+  position: fixed;
+  top: 0;
+  right: 45rpx;
   background-color: #e64340;
   color: white;
   width: 20%;
   height: 70rpx;
-  line-height: 70rpx;
   text-align: center;
   border-radius: 6rpx;
+  line-height: 70rpx;
 }
 .myCircle{
   display: flex;

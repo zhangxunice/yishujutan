@@ -1,0 +1,43 @@
+<!--pages/community/essay.wxml-->
+<view class='userinfo'>
+  <view class="main-item-t-t">
+      <view class="main-item-t-t-l">
+        <image class="headImg" src="{{essayinfo.userIcon}}"></image>
+      </view>
+      <view class="main-item-t-t-2">
+        <view class="userName">{{essayinfo.nickname}}</view>
+        <view class="created">{{essayinfo.issue_date}}</view>
+      </view>
+      <!-- <button size='mini' class='btn'>关注</button> -->
+    </view>
+</view>
+
+<view class='essay_content'>{{essayinfo.content}}</view>
+
+<view class='operation'>
+  <image src='/images/community/great.png'></image>
+  <view>{{essayinfo.praise_number}}</view>
+  <image src='/images/community/comment.png' bindtap='focusButn'></image>
+  <view>{{essayinfo.comment_number}}</view>
+</view>
+
+<view class='line'>评论</view>
+
+<view class='comment' wx:for='{{comments}}'>
+  <view class='user'>
+    <image class='icon' src='{{item.user_icon}}'></image>
+    <view class='nickname'>{{item.nickname}}</view>
+  </view>
+  <view class='content'>{{item.comment_content}}</view>
+  <view class='time'>{{item.comment_date}}</view>
+</view>
+
+<form bindsubmit='send'> 
+  <view class='commentInputView' style='bottom:{{height == ""?0:height}}px;' hidden='{{!isInput}}'>
+
+    <view  class='commentInput'>
+      <input class='input' maxlength='-1' value="{{value}}" bindfocus="inputFocus" focus='{{focusInput}}' bindblur="inputBlur" name='content'></input>
+    </view>
+    <button class='send' form-type='submit'>发送</button>
+  </view>
+</form>

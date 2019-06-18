@@ -9,6 +9,12 @@ Page({
 
   },
 
+  comment: function (event) {
+    wx.navigateTo({
+      url: '/pages/community/essay?essay_id=' + event.currentTarget.dataset.essay_id
+    })
+  },
+
   toUserPage: function (event) {
     var user_id = event.currentTarget.dataset.user_id;
     wx.navigateTo({

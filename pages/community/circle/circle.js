@@ -6,10 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    search_image: app.globalData.url + 'images/search.png',
     show1: false,
     show2: false,
     src1: '/images/community/right.png',
     src2: '/images/community/right.png',
+  },
+
+  search: function (e) {
+    wx.navigateTo({
+      url: 'result?key=' + e.detail.value.value,
+    })
   },
 
   showMyJoin: function(){

@@ -53,7 +53,7 @@
         <text>{{item.praise_number}}</text>
       </view>
       <view>
-        <image src='/images/community/comment.png' class='btnImg'></image>
+        <image src='/images/community/comment.png' class='btnImg' bindtap='comment' data-essay_id='{{item.essay_id}}'></image>
         <text>{{item.comment_number}}</text>
       </view>
   </view>
